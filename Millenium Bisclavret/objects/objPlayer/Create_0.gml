@@ -17,7 +17,12 @@ current_text_line_number = 0;
 
 current_observation = "";
 currently_talking = noone;
-in_dialogue = false;
 
+in_dialogue = false;
+in_cutscene = false;
+
+ChatterboxLoadFromFile("dialog.yarn");
+
+chatterbox = ChatterboxCreate("dialog.yarn");
 
 

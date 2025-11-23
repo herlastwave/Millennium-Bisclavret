@@ -42,6 +42,8 @@ if (place_meeting(x+hsp,y,barriers)) {
     hsp = 0;
 }
 
+// collide with solid npcs
+
 if (place_meeting(x+hsp,y,npc_container)) {
     var who_is_here = instance_place(x,y, npc_container);
     
@@ -55,6 +57,41 @@ if (place_meeting(x+hsp,y,npc_container)) {
         x=_x;
         hsp = 0;
     }
+    //check if npc is fightable
+    /*if (who_is_here != noone && who_is_here.is_fightable == true) {
+        //initialize challange dialogue
+        in_cutscene = true;
+        in_dialogue = true;
+        
+        current_dialogue = who_is_here.text[0];
+        current_name = who_is_here.char_name;
+        
+        currently_talking = who_is_here;
+        current_text_index = 0;
+        current_text_line_number = 0;
+        
+        
+        if (current_text_line_number < array_length(currently_talking.text) - 1) {
+
+            current_text_line_number++;
+
+            current_dialogue = currently_talking.text[current_text_line_number];
+            current_text_index = 0;
+        } 
+        else {
+            currently_talking = noone;
+            if (instance_exists(obj_battle_switcher) != true) {
+               var _switcher=instance_create_depth(0,0,0, obj_battle_switcher)
+               _switcher.player_data = self;
+               _switcher.enemy_data = other;
+               _switcher.original_room = room;
+               
+               room_goto(battle_screen);
+            }
+        }
+        //check if the battle switcher has already activated. if not, activate it.
+        */
+    
 }
 
 
@@ -91,23 +128,37 @@ else {
 
 // dialogue check
 
-if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)){
-    if (currently_talking == noone) {
+if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
+    
+    if (ChatterboxIsStopped(chatterbox)) {
+        
         var who_is_here = instance_place(x,y, npc_container);
-        var what_is_here = instance_place(x,y, interactable_container);
         
         if (who_is_here != noone) {
-            current_dialogue = who_is_here.text[0];
-            current_name = who_is_here.char_name;
-            
             in_dialogue = true;
-            
+            ChatterboxJump(chatterbox, who_is_here.node_name);
             currently_talking = who_is_here;
-            current_text_index = 0;
-            current_text_line_number = 0;
-            
-
+            current_name = who_is_here.char_name;
         }
+        
+    } 
+    else if (ChatterboxIsWaiting(chatterbox)) {
+        ChatterboxContinue(chatterbox); 
+    }
+    
+    if (not ChatterboxIsStopped(chatterbox)) {
+        current_dialogue = ChatterboxGetContent(chatterbox, 0);
+        current_text_index = 0;
+    }
+    else {
+        current_dialogue = "";
+        currently_talking = noone;
+        current_name = "";
+        in_dialogue=false;
+    }
+    /*
+    if (currently_talking == noone) {
+       
         else if (what_is_here != noone) {
             current_observation = what_is_here.text;
             in_dialogue = false;
@@ -124,5 +175,5 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)){
         } else {
             currently_talking = noone;
         }
-    }
+    } */
 }
