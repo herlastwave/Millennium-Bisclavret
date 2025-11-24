@@ -129,6 +129,8 @@ if (place_meeting(x+hsp,y,npc_container)) {
 
 
 
+
+// get horz. speed (pos right, neg left)
 x += x_frac;         //Add the fraction back to your position
 x_frac = x % 1;        //Get the new fraction
 x_int = x - x_frac;    // Get the rounded position
@@ -156,7 +158,6 @@ else {
     sprite_index = player_idle;
 }
 
-// dialogue check
 
 
 if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {

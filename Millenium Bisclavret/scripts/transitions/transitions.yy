@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"functions",
+  "%Name":"transitions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"functions",
+  "name":"transitions",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",

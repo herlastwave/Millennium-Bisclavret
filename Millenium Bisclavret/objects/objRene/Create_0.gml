@@ -4,8 +4,6 @@ text = [
     "..."]
 char_name = "Renée"
 
-is_collidable = true;
-
 is_fightable = true;
 defeated = false;
 

@@ -9,13 +9,13 @@ Melion Bisclavret: I don't have time for this.
 Safety guy: Don't be so cold.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 708,42
+__PrivCrochet_position: 707,40
 __PrivCrochet_tags: 
 title: Renee
 ---
 <<declare $battleStart = "true">>
 <<declare $battleEnemy = "renee">>
-Renee Allard: I have nothing to say to you.
+Renée Allard: I have nothing to say to you.
 Melion Bisclavret: Aw, cmon Renée.
 <<jump Renee_Challenge_Init>>
 ===
@@ -35,7 +35,8 @@ __PrivCrochet_position: 142,446
 __PrivCrochet_tags: 
 title: Prologue
 ---
-Empty Text
+Prologue line 1
+Prologue line 2
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 398,400
@@ -57,14 +58,24 @@ title: Safety
     SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
     SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
     Melion Bisclavret: No.
-    SHC Officer: Hey now. 
+    SHC Officer: Hey now. Anyway, do you wan't me to start this brief safety training refresher.
+    Melion Bisclavret: No.
+    SHC Officer: Too bad. 'S mandatory.  
+    SHC Officer: If you find yourself in a duel with a fellow employee, try to resolve the situation through dialogue. It might not always work out the way you expect, though.
+    SHC Officer: Getting into the headspace of your opponent can give you hints about their next move. If they seem focused on you, it could mean an attack is imminent.
+    SHC Officer: In that case, ready yourself and prepare to block. But if they seem distracted, take it as a sign to strike.
+    SHC Officer: Hypothetically speaking, of course. You should always resolve conflicts non-violently.
+    SHC Officer: Anyway, it looks like your sword is up to code. I'll get out of your way now.
     <<set $safetyIsCollidable = 0 >>
+    Melion Bisclavret: Thank the lord.
+    SHC Officer: Buuuuut if you have any more questions, you can always come back to me for help. Your saftey is our number one priority.
+    SHC Officer: I'll be '[Z]'ing you.
     <<set $safetyVisited = 1 >>
 
 <<elseif $safetyVisited == 1>>
     SHC Officer: You're back for more tips? 
     SHC Officer: I got a whole booklet of em right here. You can have it, they give us extras at the branch HQ.
-    Bisclavret reluctatntly obtained a stapled pamphlet titled 'Clarification of SHC1910.212 and SHC1910.242, as applying to hand-type office paper cutters and sharp edged hand tools'.
+    Bisclavret reluctatntly obtained a copy of 'Clarification of SHC1910.212 and SHC1910.242, as applying to hand-type office paper cutters and sharp edged hand tools'.
     Bisclavret discretely disposed of the booklet in a nearby waste bin.
     << set $gotBooklet = 1>>
     Melion Bisclavret: Thanks.
@@ -72,7 +83,7 @@ title: Safety
     <<set $safetyVisited = 2 >>
 
 <<elseif $safetyVisited > 1 >>
-    SHC Officer: Sorry Mel. B. I'm out of pamphlets. I'll have more for you next week.
+    SHC Officer: Sorry, Mel. B. I'm out of pamphlets. I'll have more for you next week.
     Melion Bisclavret: Next week? What happened to 'randomly selected'?
     SHC Officer: I'll just randomly select you again? Simple as.
 <<endif>>
