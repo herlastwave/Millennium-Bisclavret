@@ -1,0 +1,61 @@
+#__PrivCrochet_version:1
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 444,150
+__PrivCrochet_tags: 
+title: Start
+---
+Safety Guy: Oh, hey Mel. B.
+Melion Bisclavret: I don't have time for this.
+Safety guy: Don't be so cold.
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 708,42
+__PrivCrochet_tags: 
+title: Renee
+---
+<<declare $battleStart = "true">>
+<<declare $battleEnemy = "renee">>
+Renee Allard: I have nothing to say to you.
+Melion Bisclavret: Aw, cmon Renée.
+<<jump Renee_Challenge_Init>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1001,58
+__PrivCrochet_tags: 
+title: Renee_Challenge_Init
+---
+The fight will now start.
+This is placeholder text.
+
+<<set $battleStart = "true">>
+<<set $battleEnemy = "renee">>
+===
+__PrivCrochet_colorID: 8
+__PrivCrochet_position: 142,446
+__PrivCrochet_tags: 
+title: Prologue
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 403,404
+__PrivCrochet_tags: 
+title: Safety
+---
+SHC Officer: Hold up, Mel. B. 
+SHC Officer: You've been selected for a occupational compliance and safety inspection. 
+Melion Bisclavret: Please move. 
+SHC Officer: Don't be so cold hearted, Mel. B. S'just protocol.
+Melion Bisclavret: I really, *really* do not have time for this.
+SHC Officer: That's what you said last week. 
+SHC Officer: Hey, someone's gotta be concerned for well-being. 
+SHC Officer: Might as well be me. We're here to make sure that blade of yours is up to code.
+Melion Bisclavret: Who is "We"? It's always just you.
+SHC Officer: I'm loyal like that.
+SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
+SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
+Melion Bisclavret: No.
+SHC Officer: Hey now. 
+
+<<set $safetyIsCollidable = 0 >>
+===

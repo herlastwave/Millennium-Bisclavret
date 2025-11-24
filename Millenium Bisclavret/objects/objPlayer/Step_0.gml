@@ -57,6 +57,36 @@ if (place_meeting(x+hsp,y,npc_container)) {
         x=_x;
         hsp = 0;
     }
+    
+    if (who_is_here != noone && who_is_here.is_fightable == true) {
+        //initialize challange dialogue
+       if (ChatterboxIsStopped(chatterbox)) {
+           in_dialogue = true;
+           ChatterboxJump(chatterbox, who_is_here.node_name);
+        
+           currently_talking = who_is_here;
+           current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
+            current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
+       } 
+       if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) { 
+           if ChatterboxIsWaiting() {
+               ChatterboxContinue(chatterbox); 
+           }
+           
+           if (not ChatterboxIsStopped(chatterbox)) {
+               current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
+               current_text_index = 0;
+               current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
+           }
+           else {
+               current_dialogue = "";
+               currently_talking = noone;
+               current_name = "";
+               in_dialogue=false;
+           }
+        }
+    }
+    
     //check if npc is fightable
     /*if (who_is_here != noone && who_is_here.is_fightable == true) {
         //initialize challange dialogue
@@ -128,6 +158,7 @@ else {
 
 // dialogue check
 
+
 if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
     
     if (ChatterboxIsStopped(chatterbox)) {
@@ -136,9 +167,11 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         
         if (who_is_here != noone) {
             in_dialogue = true;
+            
             ChatterboxJump(chatterbox, who_is_here.node_name);
+            
             currently_talking = who_is_here;
-            current_name = who_is_here.char_name;
+            current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
         }
         
     } 
@@ -147,8 +180,9 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
     }
     
     if (not ChatterboxIsStopped(chatterbox)) {
-        current_dialogue = ChatterboxGetContent(chatterbox, 0);
+        current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
         current_text_index = 0;
+        current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
     }
     else {
         current_dialogue = "";

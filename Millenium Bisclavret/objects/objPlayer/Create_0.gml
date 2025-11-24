@@ -25,4 +25,4 @@ ChatterboxLoadFromFile("dialog.yarn");
 
 chatterbox = ChatterboxCreate("dialog.yarn");
 
-
+ChatterboxVariableDefault("gotBooklet", 0)

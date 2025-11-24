@@ -16,10 +16,16 @@ var text_y = y1 + 32;
 if (currently_talking != noone) {
     draw_set_color(c_black);
     
-    if (in_dialogue=true ) {
-        draw_text(name_x, name_y, current_name);
-        draw_text_ext(text_x, text_y, string_copy("\""+current_dialogue+"\"", 1, current_text_index), -1, window_get_width()-64);
-        current_text_index++;
+    if (in_dialogue=true) {
+        if (current_name="") {
+            draw_text_ext(text_x, text_y, string_copy(current_dialogue, 1, current_text_index), -1, window_get_width()-250);
+            current_text_index++;
+        }
+        else {
+            draw_text_ext(name_x, name_y, current_name, -1, 200);
+            draw_text_ext(text_x, text_y, string_copy("\""+current_dialogue+"\"", 1, current_text_index), -1, window_get_width()-250);
+            current_text_index++;
+        }
     }
 }
 

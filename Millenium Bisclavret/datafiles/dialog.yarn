@@ -1,16 +1,79 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 305,228
+__PrivCrochet_position: 444,150
 __PrivCrochet_tags: 
 title: Start
 ---
-This is text imported from Yarn.
-This is a second line.
+Safety Guy: Oh, hey Mel. B.
+Melion Bisclavret: I don't have time for this.
+Safety guy: Don't be so cold.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 459,522
+__PrivCrochet_position: 708,42
 __PrivCrochet_tags: 
 title: Renee
 ---
-I have nothing to say to you.
+<<declare $battleStart = "true">>
+<<declare $battleEnemy = "renee">>
+Renee Allard: I have nothing to say to you.
+Melion Bisclavret: Aw, cmon Renée.
+<<jump Renee_Challenge_Init>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1001,58
+__PrivCrochet_tags: 
+title: Renee_Challenge_Init
+---
+The fight will now start.
+This is placeholder text.
+
+<<set $battleStart = "true">>
+<<set $battleEnemy = "renee">>
+===
+__PrivCrochet_colorID: 8
+__PrivCrochet_position: 142,446
+__PrivCrochet_tags: 
+title: Prologue
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 398,400
+__PrivCrochet_tags: 
+title: Safety
+---
+<<declare $safetyVisited = 0>>
+<<if $safetyVisited==0>>
+    SHC Officer: Hold up, Mel. B. 
+    SHC Officer: You've been selected for an occupational compliance and safety inspection. 
+    Melion Bisclavret: Please move. 
+    SHC Officer: Don't be so cold hearted, Mel. B. S'just protocol.
+    Melion Bisclavret: I really, *really* do not have time for this.
+    SHC Officer: That's what you said last week. 
+    SHC Officer: Someone's gotta be concerned for your well-being. 
+    SHC Officer: Might as well be me. We're here to make sure that blade of yours is up to code.
+    Melion Bisclavret: Who is 'we'? It's always just you.
+    SHC Officer: I'm loyal like that.
+    SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
+    SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
+    Melion Bisclavret: No.
+    SHC Officer: Hey now. 
+    <<set $safetyIsCollidable = 0 >>
+    <<set $safetyVisited = 1 >>
+
+<<elseif $safetyVisited == 1>>
+    SHC Officer: You're back for more tips? 
+    SHC Officer: I got a whole booklet of em right here. You can have it, they give us extras at the branch HQ.
+    Bisclavret reluctatntly obtained a stapled pamphlet titled 'Clarification of SHC1910.212 and SHC1910.242, as applying to hand-type office paper cutters and sharp edged hand tools'.
+    Bisclavret discretely disposed of the booklet in a nearby waste bin.
+    << set $gotBooklet = 1>>
+    Melion Bisclavret: Thanks.
+    SHC Officer: Good luck, Mel. B. It's a spicy world up there.
+    <<set $safetyVisited = 2 >>
+
+<<elseif $safetyVisited > 1 >>
+    SHC Officer: Sorry Mel. B. I'm out of pamphlets. I'll have more for you next week.
+    Melion Bisclavret: Next week? What happened to 'randomly selected'?
+    SHC Officer: I'll just randomly select you again? Simple as.
+<<endif>>
 ===

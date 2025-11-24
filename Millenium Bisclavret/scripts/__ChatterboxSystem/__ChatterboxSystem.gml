@@ -58,11 +58,15 @@ function __ChatterboxSystem()
             }
         }
         
+        if (CHATTERBOX_RUNNING_FROM_IDE)
+        {
+            global.__Chatterbox = self;
+        }
+        
         //Declare global variables
         __directory            = _chatterboxDirectory;
         
         __variablesMap         = ds_map_create();
-        __variablesList        = ds_list_create();
         __variablesSetCallback = undefined;
         __nodeChangeCallback   = undefined;
         __constantsMap         = ds_map_create();
