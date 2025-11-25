@@ -206,8 +206,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"floor_1","path":"rooms/floor_1/floor_1.yy",},},
     {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"floor_1","path":"rooms/floor_1/floor_1.yy",},},
     {"roomId":{"name":"battle_screen","path":"rooms/battle_screen/battle_screen.yy",},},
   ],
   "templateType":"game",

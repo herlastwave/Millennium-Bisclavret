@@ -9,3 +9,4 @@ ChatterboxJump(chatterbox, "Prologue");
 
 current_dialogue        = ChatterboxGetContent(chatterbox,0);
 nodeTitle   = ChatterboxGetCurrent(chatterbox);
+current_name = ""

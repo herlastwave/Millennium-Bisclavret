@@ -1,5 +1,3 @@
-
-
 // get inputs
 var _key_left = keyboard_check(vk_left);
 var _key_right = keyboard_check(vk_right);
@@ -32,13 +30,7 @@ hsp = clamp(hsp, -max_hsp,max_hsp);
 
 // horizontal collision for barriers
 if (place_meeting(x+hsp,y,barriers)) {
-    var _x = round(x);
-    var _pixel = sign(hsp);
-    while (!place_meeting(_x+_pixel,y,barriers)) {
-        _x += _pixel;
-        
-    }
-    x=_x;
+    
     hsp = 0;
 }
 

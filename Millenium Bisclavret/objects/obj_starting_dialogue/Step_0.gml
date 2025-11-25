@@ -16,5 +16,5 @@ if (ChatterboxIsWaiting(chatterbox)) {
 }
 else {
     var target = floor_1;
-    TransitionStart(target,sqFadeOut, sqFadeIn);
+    TransitionStart(target,sqNoOut, sqFadeIn);
 }

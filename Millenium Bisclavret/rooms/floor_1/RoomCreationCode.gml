@@ -1,0 +1,1 @@
+background_height[0] = room_height; 

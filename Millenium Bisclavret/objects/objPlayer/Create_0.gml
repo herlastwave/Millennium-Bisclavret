@@ -4,7 +4,7 @@ accel =0.5;
 decel = 0.5;
 
 // max horz speed
-max_hsp= 6;
+max_hsp= 9;
 
 facingForward = true;
 
@@ -26,3 +26,5 @@ ChatterboxLoadFromFile("dialog.yarn");
 chatterbox = ChatterboxCreate("dialog.yarn");
 
 ChatterboxVariableDefault("gotBooklet", 0)
+
+is_colliding=false;

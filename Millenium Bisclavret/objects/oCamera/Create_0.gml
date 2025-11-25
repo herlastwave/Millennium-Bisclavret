@@ -1,5 +1,5 @@
-camWidth = 960;
-camHeight = 600;
+camWidth = 1440;
+camHeight = 900;
 
 follow=objPlayer;
 
