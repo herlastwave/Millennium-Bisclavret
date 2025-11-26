@@ -1,3 +1,5 @@
+end_scene = ChatterboxVariableGet("sceneEnd");
+
 
 if (ChatterboxIsStopped(chatterbox)) {
     
@@ -15,6 +17,13 @@ if (ChatterboxIsWaiting(chatterbox)) {
     }
 }
 else {
+    drawing_options=true;
+    // wait for player to choose options
+    
+}
+
+if (end_scene=1) {
+    ChatterboxStop(chatterbox);
     var target = floor_1;
     TransitionStart(target,sqNoOut, sqFadeIn);
 }

@@ -37,8 +37,8 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"chatterbox_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"chatterbox_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"dialog","CopyToMask":-1,"filePath":"datafiles","name":"dialog","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"dialog.yan","CopyToMask":-1,"filePath":"datafiles","name":"dialog.yan","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"dialog.yarn","CopyToMask":-1,"filePath":"datafiles","name":"dialog.yarn","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"index.html","CopyToMask":-1,"filePath":"datafiles","name":"index.html","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"Typey.otf","CopyToMask":-1,"filePath":"datafiles","name":"Typey.otf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
@@ -48,7 +48,8 @@
   },
   "name":"Millenium Bisclavret",
   "resources":[
-    {"id":{"name":"typey","path":"fonts/typey/typey.yy",},},
+    {"id":{"name":"typeyItalic","path":"fonts/typeyItalic/typeyItalic.yy",},},
+    {"id":{"name":"typeyReg","path":"fonts/typeyReg/typeyReg.yy",},},
     {"id":{"name":"barriers","path":"objects/barriers/barriers.yy",},},
     {"id":{"name":"interactable_container","path":"objects/interactable_container/interactable_container.yy",},},
     {"id":{"name":"npc_container","path":"objects/npc_container/npc_container.yy",},},
@@ -193,6 +194,7 @@
     {"id":{"name":"dancing_mouse","path":"sprites/dancing_mouse/dancing_mouse.yy",},},
     {"id":{"name":"deer_sitting","path":"sprites/deer_sitting/deer_sitting.yy",},},
     {"id":{"name":"hanginthere","path":"sprites/hanginthere/hanginthere.yy",},},
+    {"id":{"name":"mockup","path":"sprites/mockup/mockup.yy",},},
     {"id":{"name":"Monty_python_foot","path":"sprites/Monty_python_foot/Monty_python_foot.yy",},},
     {"id":{"name":"office_dandy","path":"sprites/office_dandy/office_dandy.yy",},},
     {"id":{"name":"paper_thrower","path":"sprites/paper_thrower/paper_thrower.yy",},},

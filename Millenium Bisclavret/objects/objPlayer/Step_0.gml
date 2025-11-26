@@ -204,3 +204,8 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         }
     } */
 }
+if ((ChatterboxVariableGet("battleStart"))>0) {
+    ChatterboxStop(chatterbox)
+    var target = battle_screen;
+    TransitionStart(target,sqNoOut, sqFadeIn);
+}

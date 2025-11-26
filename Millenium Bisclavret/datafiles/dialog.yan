@@ -9,10 +9,11 @@ Melion Bisclavret: I don't have time for this.
 Safety guy: Don't be so cold.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 701,34
+__PrivCrochet_position: 702,36
 __PrivCrochet_tags: 
 title: Renee
 ---
+<<declare $battleStart = "true">>
 <<declare $battleEnemy = "renee">>
 Renée Allard: Hold it right there, Bisclavret.
 Melion Bisclavret: Let me through, Renée. I need to–
@@ -29,13 +30,13 @@ Renée Allard: Face it, Bisclavret. Someone needs to drag this place kicking and
 <<jump Renee_Challenge_Init>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 996,53
+__PrivCrochet_position: 1001,58
 __PrivCrochet_tags: 
 title: Renee_Challenge_Init
 ---
 Renée Allard: challange
 Melion Bisclavret: challange
-<<set $battleStart = 1>>
+<<set $battleStart = "true">>
 <<set $battleEnemy = "renee">>
 ===
 __PrivCrochet_colorID: 8
@@ -44,20 +45,12 @@ __PrivCrochet_tags:
 title: Prologue
 ---
 [Press 'Z' or 'SPACE' to begin.]
-
-This is an options test.
--> Yes
-    Yes was selected.
--> No
-    No was selected
-
-
 Once upon a time,
 Back when foxes played polo,
 And when tigers used to smoke tobacco,
 (Or wait, don't they still do that?)
 There was a man named Melion.
-Melion was a faithful servant to his lord.
+Melion was a faithful servent to his lord.
 He toiled each day in his lord's service.
 His was a meager existence without recognition.
 But one day, he recieved a message from above.
@@ -77,7 +70,6 @@ Melion Bisclavret:"Reineke!?"
 Marie-Luce: "Haha you know him? He's–"
 Melion Bisclavret: "I'll be right there. Goodbye."
 *Click*
-<<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 396,397
@@ -127,8 +119,7 @@ title: Safety
         An unknown force compels Bisclavret on this pointless errand.
         Melion Bisclavret: Is the SHC going paperless?
         SHC Officer: Not that I heard, Mel. B. 
-        SHC Officer: But if we are, I'll be sure to hand em all off to you.
-        Melion Bisclavret: Lovely.
+        Melion Bisclavret: Right.
         << set $gotBooklet = 3>>
     <<endif>>
     SHC Officer: Sorry, Mel. B. I'm out of pamphlets. I'll have more for you next week.
@@ -152,7 +143,7 @@ title: Gator
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 695,565
+__PrivCrochet_position: 699,568
 __PrivCrochet_tags: 
 title: Thrower
 ---
@@ -163,11 +154,11 @@ title: Thrower
     Melion Bisclavret: You don't look very active.
     Cateline: That's just it, I don't know if I'm ready to let go yet...
     << if $gotBooklet == 1>>
-        Cateline: I saw you throwing out a ream for the officer over there. Is SHC going paperless too?
+        Cateline: I saw you throwing out paper earlier. Is SHC going paperless now too?
         Melion Bisclavret: Hopefully.
-        Cateline: Hmm... could you ask the officer back there for me?
+        Cateline: Hmm... could you ask the officer over there for me?
         Melion Bisclavret: Why don't you ask him yourself?
-        Cateline: I would, but I have to keep these papers from falling until I know for sure.
+        Cateline: I would, but I can't afford to drop these papers until I know for sure.
         << set $gotBooklet = 2>>
     << endif>>
     << set $throwerVisited = 1>>
@@ -175,18 +166,17 @@ title: Thrower
     <<if $gotBooklet == 3>>
         Cateline: Sooooo...?
         Melion Bisclavret: SHC has paper coming out the wazoo.
-        Cateline: Oh... I guess I jumped the gun... I'll keep holding onto these to be sure.
+        Cateline: Oh... I still don't know what to do...
         << set $gotBooklet = 4>>
         << set $throwerVisited = 2>>
-    << elseif $gotBooklet == 1 >>
-        Cateline: I saw you throwing out a ream for the officer over there. Is SHC going paperless too?
-        Melion Bisclavret: Hopefully.
-        Cateline: Hmm... could you ask the officer over there for me?
-        Melion Bisclavret: Why don't you ask him yourself?
-        Cateline: I would, but I have to keep these papers from falling until I know for sure.
-        << set $gotBooklet = 2>>
     <<endif>>
-    Melion Bisclavret: Good luck with that.
+    Melion Bisclavret: Well, good luck with that.
+<< elseif $gotBooklet == 3 >>
+    Cateline: Sooooo...?
+    Melion Bisclavret: SHC has paper coming out the wazoo.
+    Cateline: Oh... I still don't know what to do...
+    << set $gotBooklet = 4>>
+    <<set $throwerVisited = 1>>
 <<endif>>
 ===
 __PrivCrochet_colorID: 0

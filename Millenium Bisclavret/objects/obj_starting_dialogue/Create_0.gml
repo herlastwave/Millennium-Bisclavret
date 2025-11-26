@@ -9,4 +9,8 @@ ChatterboxJump(chatterbox, "Prologue");
 
 current_dialogue        = ChatterboxGetContent(chatterbox,0);
 nodeTitle   = ChatterboxGetCurrent(chatterbox);
-current_name = ""
+current_name = "";
+
+ChatterboxVariableDefault("sceneEnd", 0);
+
+drawing_options = false;

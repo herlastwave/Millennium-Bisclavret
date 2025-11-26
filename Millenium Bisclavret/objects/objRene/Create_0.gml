@@ -10,3 +10,5 @@ defeated = false;
 challange_text = [
     "Wait a moment, Bisclavret",
     "I have something to say to you."]
+
+ChatterboxVariableDefault("battleStart", 0)
