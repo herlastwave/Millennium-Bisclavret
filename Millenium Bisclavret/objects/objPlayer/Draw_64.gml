@@ -36,3 +36,31 @@ if (currently_talking != noone) {
     }
 }
 
+if (drawing_options=true) {
+    var _option_count = ChatterboxGetOptionCount(chatterbox);
+    var _i=0;
+    
+    draw_set_halign(fa_left)
+    var choice_x = x1 + 350;
+    var choice_y= y1 + 130;
+    choice_alpha=1;
+    
+    repeat (_option_count) {
+        var _choice_option = ChatterboxGetOption(chatterbox, _i);
+        
+        if(choice_select==_i) {
+            draw_sprite_ext(dagger, -1, choice_x-75, choice_y, 0.25, 0.25, 0, c_black, 1)
+            choice_alpha=1;
+        }
+        else {
+            choice_alpha=0.5;
+        }
+        
+        
+        draw_text_colour(choice_x, choice_y, _choice_option, c_black, c_black, c_black, c_black, choice_alpha);
+        
+        choice_x+=string_length(_choice_option)*12+250;
+        _i++;
+    }
+}
+

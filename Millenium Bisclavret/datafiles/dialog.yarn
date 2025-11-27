@@ -39,22 +39,15 @@ Melion Bisclavret: challange
 <<set $battleEnemy = "renee">>
 ===
 __PrivCrochet_colorID: 8
-__PrivCrochet_position: 141,444
+__PrivCrochet_position: 140,443
 __PrivCrochet_tags: 
 title: Prologue
 ---
 [Press 'Z' or 'SPACE' to begin.]
 
-This is an options test.
--> Yes
-    Yes was selected.
--> No
-    No was selected
-
-
 Once upon a time,
 Back when foxes played polo,
-And when tigers used to smoke tobacco,
+And tigers used to smoke tobacco,
 (Or wait, don't they still do that?)
 There was a man named Melion.
 Melion was a faithful servant to his lord.
@@ -67,20 +60,27 @@ Melion Bisclavret: "This is he."
 Marie-Luce: "Congratulations! You've been selected for a promotion to general manager."
 Melion Bisclavret: "G–"
 Marie-Luce: "If you could come up to sign a few papers to finalize the decision. You know, just protocol."
-Melion Bisclavret: "Right, of course."
-Marie-Luce: "Oh, and be quick about it please. Mr. Tweed is a very busy man."
+-> Of course!
+    Melion Bisclavret: "Right, of course."
+-> Not yet...
+    Melion Bisclavret: "I need time to think about it."
+Marie-Luce: "Well, be quick about it please. Mr. Tweed is a very busy man."
 Melion Bisclavret: "Understood. I'll be there promptly."
-Marie-Luce: "But if you'd like to let you co-workers know on the way up, I understand. I'm sure they'll want to congratulate you on the big accomplishment!"
-Melion Bisclavret: "Wait, other people know about this?"
-Marie-Luce: "Ha ha. Well, it was supposed to be a suprise, but Reineke found out and he's a bit of a gossip."
+Marie-Luce: "But if you'd like to celebrate a little with your co-workers on the way up, I won't stop you.
+Marie-Luce: "I'm sure everyone'll want to congratulate you on the big accomplishment!"
+-> Absolutely.
+    Melion Bisclavret: "Sure, but am I not the first to hear of this?"
+-> Absolutely not.
+    Melion Bisclavret: "Uh... right. But you're saying I'm not the first to hear of this?"
+Marie-Luce: "Well, not exactly. Reineke found out and he's a bit of a gossip."
 Melion Bisclavret:"Reineke!?"
-Marie-Luce: "Haha you know him? He's–"
+Marie-Luce: "Ha ha, you know him? He's–"
 Melion Bisclavret: "I'll be right there. Goodbye."
 *Click*
 <<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 396,397
+__PrivCrochet_position: 395,396
 __PrivCrochet_tags: 
 title: Safety
 ---
@@ -98,9 +98,17 @@ title: Safety
     SHC Officer: I'm loyal like that.
     SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
     SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
-    Melion Bisclavret: No.
-    SHC Officer: Hey now. Anyway, do you wan't me to start this brief safety training refresher.
-    Melion Bisclavret: No.
+    -> Yes.
+        Melion Bisclavret: Sure.
+        SHC Officer: Right on, Mel. B.
+    -> No.
+        Melion Bisclavret: No.
+        SHC Officer: Agree to disagree, Mel. B. 
+    SHC Officer: Anyway, would you like to start a brief safety training refresher?
+    -> No.
+        Melion Bisclavret: No.
+    -> No.
+        Melion Bisclavret: No.
     SHC Officer: Too bad. 'S mandatory.  
     SHC Officer: If you find yourself in a duel with a fellow employee, try to resolve the situation through dialogue. It might not always work out the way you expect, though.
     SHC Officer: Getting into the headspace of your opponent can give you hints about their next move. If they seem focused on you, it could mean an attack is imminent.
@@ -134,7 +142,6 @@ title: Safety
     SHC Officer: Sorry, Mel. B. I'm out of pamphlets. I'll have more for you next week.
     Melion Bisclavret: Next week? What happened to 'randomly selected'?
     SHC Officer: I'll just randomly select you again? Simple as.
-
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
@@ -167,10 +174,24 @@ title: Thrower
         Melion Bisclavret: Hopefully.
         Cateline: Hmm... could you ask the officer back there for me?
         Melion Bisclavret: Why don't you ask him yourself?
-        Cateline: I would, but I have to keep these papers from falling until I know for sure.
-        << set $gotBooklet = 2>>
+        Cateline: I would, but I'm juggling a lot of things right now.
+        -> Offer help.
+            << set $gotBooklet = 2>>
+            Melion Bisclavret: I'll let you know.
+            << set $throwerVisited = 1>>
+        -> Not my problem.
+            << set $throwerVisited = 2>>
+            Melion Bisclavret: Good luck with that.
     << endif>>
-    << set $throwerVisited = 1>>
+<< elseif $throwerVisited==2>>
+    Cateline: Hmm... could you ask the officer back there for me?
+    -> Offer help.
+        << set $gotBooklet = 2>>
+        Melion Bisclavret: I'll let you know.
+        << set $throwerVisited = 1>>
+    -> Not my problem.
+        << set $throwerVisited = 2>>
+        Melion Bisclavret: Good luck with that.
 << elseif $throwerVisited == 1>>
     <<if $gotBooklet == 3>>
         Cateline: Sooooo...?

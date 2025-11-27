@@ -13,7 +13,7 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"battle","folderPath":"folders/battle.yy","name":"battle","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"bg_assets","folderPath":"folders/bg_assets.yy","name":"bg_assets","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"graphic_assets","folderPath":"folders/graphic_assets.yy","name":"graphic_assets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Chatterbox","folderPath":"folders/Chatterbox.yy","name":"Chatterbox","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"(System) (Don't look in here)","folderPath":"folders/Chatterbox/(System) (Don't look in here).yy","name":"(System) (Don't look in here)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"omg i can't believe you looked in here","folderPath":"folders/Chatterbox/(System) (Don't look in here)/omg i can't believe you looked in here.yy","name":"omg i can't believe you looked in here","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -191,6 +191,7 @@
     {"id":{"name":"battle_enemy","path":"sprites/battle_enemy/battle_enemy.yy",},},
     {"id":{"name":"battle_player","path":"sprites/battle_player/battle_player.yy",},},
     {"id":{"name":"bg_test","path":"sprites/bg_test/bg_test.yy",},},
+    {"id":{"name":"dagger","path":"sprites/dagger/dagger.yy",},},
     {"id":{"name":"dancing_mouse","path":"sprites/dancing_mouse/dancing_mouse.yy",},},
     {"id":{"name":"deer_sitting","path":"sprites/deer_sitting/deer_sitting.yy",},},
     {"id":{"name":"hanginthere","path":"sprites/hanginthere/hanginthere.yy",},},
@@ -208,8 +209,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
     {"roomId":{"name":"floor_1","path":"rooms/floor_1/floor_1.yy",},},
+    {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
     {"roomId":{"name":"battle_screen","path":"rooms/battle_screen/battle_screen.yy",},},
   ],
   "templateType":"game",

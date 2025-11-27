@@ -14,3 +14,6 @@ current_name = "";
 ChatterboxVariableDefault("sceneEnd", 0);
 
 drawing_options = false;
+
+choice_select=0;
+choice_alpha=1;

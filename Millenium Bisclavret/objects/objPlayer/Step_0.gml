@@ -151,11 +151,9 @@ else {
 }
 
 
-
+/*
 if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
-    
     if (ChatterboxIsStopped(chatterbox)) {
-        
         var who_is_here = instance_place(x,y, npc_container);
         
         if (who_is_here != noone) {
@@ -166,7 +164,6 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
             currently_talking = who_is_here;
             current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
         }
-        
     } 
     else if (ChatterboxIsWaiting(chatterbox)) {
         ChatterboxContinue(chatterbox); 
@@ -176,6 +173,13 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
         current_text_index = 0;
         current_name = ChatterboxGetContentSpeaker(chatterbox, 0);
+        
+        if (ChatterboxGetOptionCount(chatterbox)>0) {
+            drawing_options=true;
+        }
+        else {
+            drawing_options=false;
+        }
     }
     else {
         current_dialogue = "";
@@ -183,27 +187,69 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         current_name = "";
         in_dialogue=false;
     }
-    /*
-    if (currently_talking == noone) {
-       
-        else if (what_is_here != noone) {
-            current_observation = what_is_here.text;
-            in_dialogue = false;
-            currently_talking = true;
+}
+*/
+
+if (place_meeting(x+hsp,y,npc_container)) {
+
+    var who_is_here = instance_place(x,y, npc_container);
+    
+    if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
+        in_dialogue = true;
+    }
+    if (in_dialogue=true) {
+        
+        if (ChatterboxIsStopped(chatterbox) && first_line_written==false) {
+            ChatterboxJump(chatterbox, who_is_here.node_name);
+            current_text_index = 0;
+            currently_talking = who_is_here;
+            current_name = ChatterboxGetContentSpeaker(chatterbox, 0); 
+            current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
+            first_line_written=true;
+        }
+        else {
+            if ChatterboxIsWaiting(chatterbox) {
+                if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) { 
+                  ChatterboxContinue(chatterbox); 
+                  current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
+                  current_name = ChatterboxGetContentSpeaker(chatterbox, 0); 
+                  current_text_index = 0; 
+               }
+            }
+            else if (ChatterboxGetOptionCount(chatterbox)>0) {
+                drawing_options=true;
+                // wait for player to choose options using space
+                choice_select+= keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);
+                if (choice_select > ChatterboxGetOptionCount(chatterbox)-1) {
+                    choice_select = 0;
+                }
+                else if (choice_select < 0) {
+                    choice_select = ChatterboxGetOptionCount(chatterbox)-1;
+                }
+                //check for whether the player confirms a choice
+                if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
+                    ChatterboxSelect(chatterbox, choice_select);
+                    current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
+                    current_name = ChatterboxGetContentSpeaker(chatterbox, 0); 
+                    current_text_index = 0;
+                } 
+            }
+            else {
+                drawing_options = false;
+                current_dialogue = "";
+                currently_talking = noone;
+                current_name = "";
+                in_dialogue=false;
+            }
         }
     }
-    else {
-        if (current_text_line_number < array_length(currently_talking.text) - 1) {
-
-            current_text_line_number++;
-
-            current_dialogue = currently_talking.text[current_text_line_number];
-            current_text_index = 0;
-        } else {
-            currently_talking = noone;
-        }
-    } */
 }
+
+if (in_dialogue=false) {
+  first_line_written=false;
+}
+
+
 if ((ChatterboxVariableGet("battleStart"))>0) {
     ChatterboxStop(chatterbox)
     var target = battle_screen;

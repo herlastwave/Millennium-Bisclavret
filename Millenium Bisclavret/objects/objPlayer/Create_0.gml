@@ -15,7 +15,6 @@ current_name = "";
 current_text_index = 0;
 current_text_line_number = 0;
 
-current_observation = "";
 currently_talking = noone;
 
 in_dialogue = false;
@@ -28,3 +27,11 @@ chatterbox = ChatterboxCreate("dialog.yarn");
 ChatterboxVariableDefault("gotBooklet", 0)
 
 is_colliding=false;
+
+drawing_options = false;
+
+choice_select=0;
+choice_alpha=1;
+
+first_line_written=false;
+
