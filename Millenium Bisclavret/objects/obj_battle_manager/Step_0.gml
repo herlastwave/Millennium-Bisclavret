@@ -59,7 +59,6 @@ if (picking_random_desc=true) {
     picking_random_desc=false;
 }
 
-show_debug_message(current_enemy_desc);
 
 //passive index comes first, then active
 //check whether the number falls within the passive range
@@ -102,7 +101,7 @@ if (in_dialogue==true) {
         }
         else {
             // implement some way to keep track of active/passive text
-            current_dialogue = "This is placeholder text."
+            current_dialogue = current_enemy_desc;
             current_name = ""
             drawing_options=false;
             in_dialogue=false;
@@ -115,6 +114,35 @@ if (in_dialogue=false) {
 first_line_written=false;
 }
 
+//go through menu
+if (selecting_menu_option==true && check_menu_option_selected==false) {
+        
+    if (menu_option_confirm=="Taunt") {
+        show_debug_message("taunting");
+        check_menu_option_selected=true;
+    }
+    else if (menu_option_confirm=="Block"){
+        show_debug_message("blocking");
+        check_menu_option_selected=true;
+    }
+    else if (menu_option_confirm=="Strike"){
+        show_debug_message("striking");
+        
+        if (enemy_active==false) {
+            show_debug_message("successful strike");
+            enemy_hits_taken++;
+            check_menu_option_selected=true;
+        }
+        else {
+            show_debug_message("failed strike");
+            check_menu_option_selected=true;
+        }
+    }
+    else if (menu_option_confirm=="Flee"){
+        show_debug_message("fleeing");
+        check_menu_option_selected=true;
+    }
+}
 
 
 

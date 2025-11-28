@@ -88,11 +88,18 @@ if (in_dialogue=false) {
     }
     
     menu_choice_select+= keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
-
+    
+    //push menu choice
+    if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
+        menu_option_confirm=menu_options[menu_choice_select];
+        selecting_menu_option=true;
+    } 
+    
     repeat (menu_option_count) {
         var menu_choice_option = menu_options[_i];
         
-        if(menu_choice_select==_i) {
+        
+        if(menu_choice_select==_i && check_menu_option_selected==false) {
             draw_sprite_ext(dagger, -1, menu_x-95-string_length(menu_choice_option)*24, menu_y+8, 0.38, 0.38, 0, c_black, 1)
             choice_alpha=1;
         }
@@ -119,7 +126,7 @@ else {
 
 //draw hitpoints
 //player
-var player_health_x = 65;
+var player_health_x = 165;
 var player_health_y = 150;
 var health_spr_scale=0.20;
 var health_spr_spacing=75;
@@ -150,8 +157,8 @@ draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,health_spr_scale
 
 
 //enemy
-var enemy_health_x = window_get_width()-50;
-var enemy_health_y = 100;
+var enemy_health_x = window_get_width()-150;
+var enemy_health_y = 50;
 var enemy_health_spr_scale=0.15;
 var enemy_health_spr_spacing=55;
 

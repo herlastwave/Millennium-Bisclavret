@@ -22,6 +22,8 @@ first_line_written=true;
 
 in_dialogue = true;
 menu_choice_select = 0;
+menu_option_confirm="";
+selecting_menu_option=false;
 
 player_health_total=3;
 enemy_health_total=5;
@@ -50,3 +52,5 @@ picking_random_desc=true;
 enemy_active=false;
 
 randomise();
+
+check_menu_option_selected=false;
