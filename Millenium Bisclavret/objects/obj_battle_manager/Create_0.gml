@@ -35,6 +35,18 @@ current_enemy_health=0;
 running_opening_sequence=true;
 //time_source_create(time_source_game, 5, time_source_units_frames, )
 
-timer_reset_value = 1.5*room_speed;
+timer_reset_value = 1*room_speed;
 timer1 = timer_reset_value;
 timer2 = timer_reset_value;
+
+
+//these must be the same length
+enemy_lines_active=["active line 1","active line 2"];
+enemy_lines_passive=["passive line 1","passive line 2"];
+
+current_enemy_desc="";
+picking_random_desc=true;
+
+enemy_active=false;
+
+randomise();

@@ -23,11 +23,46 @@ if (running_opening_sequence == true) {
        }
     }
     
-    if (current_player_health>= player_health_total) {
+    if (current_enemy_health >= enemy_health_total) {
         running_opening_sequence=false;
-
     }
 }
+else {
+    current_player_health=player_health_total-player_hits_taken;
+    current_enemy_health=enemy_health_total-enemy_hits_taken;
+
+}
+
+//pick active or passive enemy behavior and dialogue
+
+if (picking_random_desc=true) {
+    var _current_desc_index = 0;
+    var _active_passive_select = 0;
+    
+    _active_passive_select=irandom_range(0,1)
+    if (_active_passive_select == 0) {
+        enemy_active=false;
+    }
+    else {
+        enemy_active=true;
+    }
+    
+    _current_desc_index=irandom_range(0,array_length(enemy_lines_passive)-1);
+    
+    if (_active_passive_select==0) {
+       current_enemy_desc=enemy_lines_passive[_current_desc_index];
+    }
+    else {
+       current_enemy_desc=enemy_lines_active[_current_desc_index];
+    }
+    
+    picking_random_desc=false;
+}
+
+show_debug_message(current_enemy_desc);
+
+//passive index comes first, then active
+//check whether the number falls within the passive range
 
 
 if (in_dialogue==true) {
@@ -66,6 +101,7 @@ if (in_dialogue==true) {
             } 
         }
         else {
+            // implement some way to keep track of active/passive text
             current_dialogue = "This is placeholder text."
             current_name = ""
             drawing_options=false;
@@ -75,12 +111,10 @@ if (in_dialogue==true) {
     }
 }
 
-
 if (in_dialogue=false) {
 first_line_written=false;
 }
 
-//track player health
-//current_player_health=player_health_total-player_hits_taken;
-current_enemy_health+= keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);
+
+
 

@@ -132,11 +132,13 @@ var empty_health_points=player_health_total-current_player_health;
 draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1);
 player_health_y += health_spr_spacing;
 
-repeat (empty_health_points) {   
-    
-    draw_sprite_ext(hit_point_empty, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
-    
-    player_health_y+=health_spr_spacing;
+if running_opening_sequence == false {
+   repeat (empty_health_points) {   
+       
+       draw_sprite_ext(hit_point_empty, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
+       
+       player_health_y+=health_spr_spacing;
+   }
 }
 repeat (full_health_points) {   
     
@@ -160,12 +162,16 @@ var empty_health_points=enemy_health_total-current_enemy_health;
 
 draw_sprite_ext(health_karat,-1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1);
 enemy_health_y += enemy_health_spr_spacing;
-repeat (empty_health_points) {   
+
+if running_opening_sequence == false {
+    repeat (empty_health_points) {   
     
-    draw_sprite_ext(hit_point_empty, -1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1)
-    
-    enemy_health_y+=enemy_health_spr_spacing;
+       draw_sprite_ext(hit_point_empty, -1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1)
+       
+       enemy_health_y+=enemy_health_spr_spacing;
+    }
 }
+
 repeat (full_health_points) {   
     
     draw_sprite_ext(hit_point_full, -1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1)
