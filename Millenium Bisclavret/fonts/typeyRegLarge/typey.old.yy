@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"typeyReg",
+  "%Name":"typey",
   "AntiAlias":1,
   "applyKerning":0,
   "ascender":25,
@@ -451,7 +451,7 @@
   "last":0,
   "lineHeight":31,
   "maintainGms1Font":false,
-  "name":"typeyReg",
+  "name":"typey",
   "parent":{
     "name":"Millenium Bisclavret",
     "path":"Millenium Bisclavret.yyp",

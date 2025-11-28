@@ -80,7 +80,7 @@ Melion Bisclavret: "I'll be right there. Goodbye."
 <<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 395,396
+__PrivCrochet_position: 393,394
 __PrivCrochet_tags: 
 title: Safety
 ---
@@ -211,9 +211,44 @@ title: Thrower
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 709,299
+__PrivCrochet_position: 708,298
 __PrivCrochet_tags: 
 title: Dandy
 ---
+<<declare $dandyVisited = 0>>
+<<if $dandyVisited == 0>>
 ...
+Does Bisclavret *really* want to get involved?
+-> Hell no!
+    Melion Bisclavret: (Whoof...)
+-> Sure.
+    Melion Bisclavret: Hey.
+    Dandy D'airelle: Bon matin, mon sieur Bisclavret. 
+    Melion Bisclavret: (Urgh.)
+    Dandy D'airelle: My heartfelt felicitations on your promotion. I'm relieved to know *someone* will bring a little class back to this place.
+    Melion Bisclavret: Thanks.
+    Dandy D'airelle: At least you have the decency to dress 'tenue de ville'. One would imagine so-called 'professionals' would be capable of matching textiles, but alas.
+    Dandy D'airelle: Just look at Mademoiselle Allard down there. Absurd. Bare fleece vests will *never* happen. And what in god's name are those pants?
+    Melion Bisclavret: She does yoga, I think. Mindfulness.
+    Dandy D'airelle: If she does, it isn't working. She's looks indignant. Downright apoplectic. Why?
+    -> Because of me.
+        Melion Bisclavret: Probably because I just took her job.
+        Dandy D'airelle: Oh. Well...
+        Melion Bisclavret: It happens.
+        <<set $dandyVisited=1>>
+    -> Fashion angst.
+        Melion Bisclavret: She isn't fashionable like you are, Dandy D'airelle.
+        Dandy D'airelle: Neither are you, but you seem quite calm mon sieur Bisclavret. 
+        Melion Bisclavret: ...
+        <<set $dandyVisited=1>>
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1237,47
+__PrivCrochet_tags: 
+title: ReneeBattle
+---
+ReneeBattle
+X
+X2
 ===

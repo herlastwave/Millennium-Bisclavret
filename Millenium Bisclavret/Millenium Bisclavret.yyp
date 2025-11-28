@@ -13,7 +13,6 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"battle","folderPath":"folders/battle.yy","name":"battle","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"graphic_assets","folderPath":"folders/graphic_assets.yy","name":"graphic_assets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Chatterbox","folderPath":"folders/Chatterbox.yy","name":"Chatterbox","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"(System) (Don't look in here)","folderPath":"folders/Chatterbox/(System) (Don't look in here).yy","name":"(System) (Don't look in here)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"omg i can't believe you looked in here","folderPath":"folders/Chatterbox/(System) (Don't look in here)/omg i can't believe you looked in here.yy","name":"omg i can't believe you looked in here","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -26,6 +25,7 @@
     {"$GMFolder":"","%Name":"Setup","folderPath":"folders/Chatterbox/Setup.yy","name":"Setup","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Variables and Constants","folderPath":"folders/Chatterbox/Variables and Constants.yy","name":"Variables and Constants","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Dialogue","folderPath":"folders/Dialogue.yy","name":"Dialogue","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"graphic_assets","folderPath":"folders/graphic_assets.yy","name":"graphic_assets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"helpers","folderPath":"folders/helpers.yy","name":"helpers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"interactables","folderPath":"folders/interactables.yy","name":"interactables","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"npc","folderPath":"folders/npc.yy","name":"npc","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -50,6 +50,7 @@
   "resources":[
     {"id":{"name":"typeyItalic","path":"fonts/typeyItalic/typeyItalic.yy",},},
     {"id":{"name":"typeyReg","path":"fonts/typeyReg/typeyReg.yy",},},
+    {"id":{"name":"typeyRegLarge","path":"fonts/typeyRegLarge/typeyRegLarge.yy",},},
     {"id":{"name":"barriers","path":"objects/barriers/barriers.yy",},},
     {"id":{"name":"interactable_container","path":"objects/interactable_container/interactable_container.yy",},},
     {"id":{"name":"npc_container","path":"objects/npc_container/npc_container.yy",},},
@@ -195,6 +196,9 @@
     {"id":{"name":"dancing_mouse","path":"sprites/dancing_mouse/dancing_mouse.yy",},},
     {"id":{"name":"deer_sitting","path":"sprites/deer_sitting/deer_sitting.yy",},},
     {"id":{"name":"hanginthere","path":"sprites/hanginthere/hanginthere.yy",},},
+    {"id":{"name":"health_karat","path":"sprites/health_karat/health_karat.yy",},},
+    {"id":{"name":"hit_point_empty","path":"sprites/hit_point_empty/hit_point_empty.yy",},},
+    {"id":{"name":"hit_point_full","path":"sprites/hit_point_full/hit_point_full.yy",},},
     {"id":{"name":"mockup","path":"sprites/mockup/mockup.yy",},},
     {"id":{"name":"Monty_python_foot","path":"sprites/Monty_python_foot/Monty_python_foot.yy",},},
     {"id":{"name":"office_dandy","path":"sprites/office_dandy/office_dandy.yy",},},
@@ -209,9 +213,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"floor_1","path":"rooms/floor_1/floor_1.yy",},},
-    {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
     {"roomId":{"name":"battle_screen","path":"rooms/battle_screen/battle_screen.yy",},},
+    {"roomId":{"name":"start","path":"rooms/start/start.yy",},},
+    {"roomId":{"name":"floor_1","path":"rooms/floor_1/floor_1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
