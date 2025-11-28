@@ -77,7 +77,7 @@ var menu_option_count = array_length(menu_options);
 var _i=0;
 draw_set_halign(fa_right)
 
-if (in_dialogue=false) {
+if (battle_turn==1) {
     // wait for player to choose options using space
     
     if (menu_choice_select > menu_option_count-1) {
@@ -92,12 +92,10 @@ if (in_dialogue=false) {
     //push menu choice
     if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         menu_option_confirm=menu_options[menu_choice_select];
-        selecting_menu_option=true;
     } 
     
     repeat (menu_option_count) {
         var menu_choice_option = menu_options[_i];
-        
         
         if(menu_choice_select==_i && check_menu_option_selected==false) {
             draw_sprite_ext(dagger, -1, menu_x-95-string_length(menu_choice_option)*24, menu_y+8, 0.38, 0.38, 0, c_black, 1)

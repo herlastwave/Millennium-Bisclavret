@@ -54,3 +54,10 @@ enemy_active=false;
 randomise();
 
 check_menu_option_selected=false;
+check_enemy_action_complete=false;
+
+//battle turn = 0: game picks enemy description
+//battle turn = 1: players turn to choose
+//battle turn = 2: enemy attacks or does not
+//battle turn = 3: reset
+battle_turn=-1;
