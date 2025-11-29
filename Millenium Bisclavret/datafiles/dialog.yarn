@@ -9,12 +9,14 @@ Melion Bisclavret: I don't have time for this.
 Safety guy: Don't be so cold.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 701,34
+__PrivCrochet_position: 700,32
 __PrivCrochet_tags: 
 title: Renee
 ---
 <<declare $battleEnemy = "renee">>
 Renée Allard: Hold it right there, Bisclavret.
+<<set $battleStart = 1>>
+<<set $battleEnemy = "renee">>
 Melion Bisclavret: Let me through, Renée. I need to–
 Renée Allard: I know exactly what you need, Bisclavret, but I cannot allow it.
 Melion Bisclavret: Renée, please–
@@ -35,8 +37,6 @@ title: Renee_Challenge_Init
 ---
 Renée Allard: challange
 Melion Bisclavret: challange
-<<set $battleStart = 1>>
-<<set $battleEnemy = "renee">>
 ===
 __PrivCrochet_colorID: 8
 __PrivCrochet_position: 140,443
@@ -72,8 +72,8 @@ Marie-Luce: "I'm sure everyone'll want to congratulate you on the big accomplish
     Melion Bisclavret: "Sure, but am I not the first to hear of this?"
 -> Absolutely not.
     Melion Bisclavret: "Uh... right. But you're saying I'm not the first to hear of this?"
-Marie-Luce: "Well, not exactly. Reineke found out and he's a bit of a gossip."
-Melion Bisclavret:"Reineke!?"
+Marie-Luce: "Well, not exactly. Gaurin found out and he's a bit of a gossip."
+Melion Bisclavret:"Gaurin!?"
 Marie-Luce: "Ha ha, you know him? He's–"
 Melion Bisclavret: "I'll be right there. Goodbye."
 *Click*

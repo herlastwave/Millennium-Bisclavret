@@ -252,6 +252,8 @@ if (in_dialogue=false) {
 
 if ((ChatterboxVariableGet("battleStart"))>0) {
     ChatterboxStop(chatterbox)
-    var target = battle_screen;
+/*    var target = battle_screen;
     TransitionStart(target,sqNoOut, sqFadeIn);
+    */
+    NewEncounter([global.enemies.renee],battle_background);
 }
