@@ -4,13 +4,13 @@ text = [
     "..."]
 char_name = "Renée"
 
-is_fightable = true;
-defeated = false;
+is_fightable = false;
+defeated = true;
 
 challange_text = [
     "Wait a moment, Bisclavret",
     "I have something to say to you."]
 
-node_name="Renee";
+node_name="ReneePostBattle";
 
 ChatterboxVariableDefault("battleStart", 0);

@@ -15,7 +15,6 @@ title: Renee
 ---
 <<declare $battleEnemy = "renee">>
 Renée Allard: Hold it right there, Bisclavret.
-<<set $battleStart = 1>>
 <<set $battleEnemy = "renee">>
 Melion Bisclavret: Let me through, Renée. I need to–
 Renée Allard: I know exactly what you need, Bisclavret, but I cannot allow it.
@@ -37,6 +36,7 @@ title: Renee_Challenge_Init
 ---
 Renée Allard: challange
 Melion Bisclavret: challange
+<<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 8
 __PrivCrochet_position: 140,443
@@ -244,11 +244,11 @@ Does Bisclavret *really* want to get involved?
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1237,47
+__PrivCrochet_position: 980,288
 __PrivCrochet_tags: 
-title: ReneeBattle
+title: ReneePostBattle
 ---
-ReneeBattle
-X
-X2
+Renee Post Battle Dialogue
+Line 2
+Line 3
 ===

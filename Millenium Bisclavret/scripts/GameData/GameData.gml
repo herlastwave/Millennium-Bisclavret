@@ -13,7 +13,35 @@ global.actionLibrary =
             var _damage=ceil(_user.strength);
             BattleChangeHP(_targets[0],-_damage,0);
         }
+    },
+    charge: {
+        name: "Charge",
+        description: "{0} Charged and struck!",
+        subMenu: "Special",
+        targetRequired: true,
+        targetEnemyByDefault: true, //0: party/self, 1: enemy
+        targetAll: MODE.NEVER,
+        effectSprite: sAttack,
+        effectOnTarget:  MODE.ALWAYS,
+        func: function(_user, _targets) {
+            var _damage=ceil(_user.strength*2);
+            BattleChangeHP(_targets[0], -_damage);
+            //deplete user hp by 1
+            BattleChangeHP(_user, -1);
+        }
+    },
+    block: {
+        name: "Block",
+        description: "{0} Blocked.",
+        targetRequired: false,
+        targetEnemyByDefault: false,
+        effectSprite: undefined,
+        effectOnTarget: MODE.ALWAYS,
+        func: function(_user) {
+            var
+        }
     }
+    
 }
 
 enum MODE {
@@ -28,9 +56,9 @@ global.player = [
         name: "Bisclavret",
         hp: 3,
         hp_max: 3,
-        strength: 1,
+        strength: 5,
         sprites: {idle: battle_player},
-        actions: []
+        actions: [global.actionLibrary.attack, global.actionLibrary.charge]
         
     }
 ]
@@ -38,9 +66,10 @@ global.player = [
 global.enemies = {
     renee: {
         name: "Renée",
+        postBattleNode: "ReneePostBattle",
         hp: 5,
         hp_max: 5,
-        strength: 1,
+        strength: 0,
         sprites: {idle: battle_renee},
         actions: [global.actionLibrary.attack],
         AIscript : function() {

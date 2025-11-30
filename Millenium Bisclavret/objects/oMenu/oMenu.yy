@@ -1,21 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"objRene",
+  "%Name":"oMenu",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objRene",
+  "name":"oMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"npc",
-    "path":"folders/npc.yy",
+    "name":"helpers",
+    "path":"folders/helpers.yy",
   },
-  "parentObjectId":{
-    "name":"npc_container",
-    "path":"objects/npc_container/npc_container.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"renee_overworld",
-    "path":"sprites/renee_overworld/renee_overworld.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

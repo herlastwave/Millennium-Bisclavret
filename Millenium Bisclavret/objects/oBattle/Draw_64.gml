@@ -70,10 +70,10 @@ for (var i=0; i<array_length(playerUnits); i++) {
 }
 
 //draw hp bubbles
-var player_health_x = 165;
-var player_health_y = 150;
-var health_spr_scale=0.25;
-var health_spr_spacing=90;
+var player_health_x = 180;
+var player_health_y = 110;
+var health_spr_scale=0.22;
+var health_spr_spacing=80;
 
 var enemy_health_x = window_get_width()-150;
 var enemy_health_y = 50;
@@ -125,8 +125,104 @@ for (var i=0; i<array_length(enemyUnits); i++) {
     draw_sprite_ext(health_karat,-1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,180,c_white,1);
 }
 
+draw_set_font(typeyReg);
+
+var rect_x1= 0;
+var rect_y1= window_get_height() - 200;
+var rect_x2 = window_get_width();
+var rect_y2 = window_get_height();
+
+draw_set_color(c_white);
+draw_rectangle(rect_x1, rect_y1, rect_x2, rect_y2, false);
+
+var name_x = x1 + 290;
+var name_y = y1 + 50;
+    
+var text_x = x1 + 340;
+var text_y = y1 + 50;
+
+draw_set_color(c_black);
+
+/*
+if (current_name="") {
+    draw_set_halign(fa_left)
+    draw_set_font(typeyReg);
+    draw_text_ext_colour(text_x, text_y, string_copy(current_dialogue, 1, current_text_index), -1, window_get_width()-450, c_black, c_black, c_black, c_black, 1);
+    current_text_index++;
+}
+*/
+//else {
+    /*draw_set_halign(fa_right)
+    draw_set_font(typeyItalic);
+    draw_text_ext_colour(name_x, name_y, current_name, -1, 250, c_black, c_black, c_black, c_black, 1);
+    draw_text_ext_colour(name_x+35, name_y, "–", -1, 200, c_black, c_black, c_black, c_black, 1); */
+    draw_set_font(typeyReg);
+    draw_set_halign(fa_left)
+    draw_text_ext_colour(text_x, text_y, string_copy("\""+battleText+"\"", 1, current_text_index), -1, window_get_width()-450, c_black, c_black, c_black, c_black, 1);
+    current_text_index++;
+//}
 
 
+//draw main menu - from old code
+/*
+var menu_x = 300;
+var menu_y = 500;
+var menu_spacing=50;
+choice_alpha=1;
 
-//enemy
+draw_set_colour(c_black);
+draw_set_font(typeyRegLarge);
 
+menu_options = ["Taunt","Block","Strike","Flee"];
+var menu_length = array_length(menu_options);
+
+var _i=0;
+draw_set_halign(fa_right)
+
+var _unit = unitTurnOrder[turn];
+
+if (_unit.object_index==oBattleUnitPlayer) {
+    // wait for player to choose options using space
+    
+    if (menu_hover > menu_length-1) {
+        menu_hover = 0;
+    }
+    else if (menu_hover < 0) {
+        menu_hover = menu_length-1;
+    }
+    
+    menu_hover+= keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+    
+    //push menu choice
+    if (keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
+        menu_push=menu_options[menu_hover];
+    } 
+    
+    repeat (menu_length) {
+        var menu_item = menu_options[_i];
+        
+        if(menu_hover==_i) {
+            draw_sprite_ext(dagger, -1, menu_x-95-string_length(menu_item)*24, menu_y+8, 0.38, 0.38, 0, c_black, 1)
+            choice_alpha=1;
+        }
+        else {
+            choice_alpha=0.5;
+        }
+        
+        draw_text_colour(menu_x, menu_y, menu_item, c_black, c_black, c_black, c_black, choice_alpha);
+        
+        menu_y+=menu_spacing;
+        _i++;
+    }
+}
+else {
+    repeat (menu_length) {
+        var menu_item = menu_options[_i];
+        
+        draw_text_colour(menu_x, menu_y, menu_item, c_black, c_black, c_black, c_black, choice_alpha);
+        
+        menu_y+=menu_spacing;
+        _i++;
+    }
+}
+*/

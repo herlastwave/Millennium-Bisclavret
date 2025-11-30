@@ -64,6 +64,7 @@ if (drawing_options=true) {
 }
 
 //draw menus
+
 var menu_x = 250;
 var menu_y = 500;
 var menu_spacing=50;

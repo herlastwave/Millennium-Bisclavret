@@ -1,4 +1,6 @@
 draw_set_font(typeyReg);
+draw_set_valign(fa_top);
+
 
 var x1= 0;
 var y1= window_get_height() - 200;
