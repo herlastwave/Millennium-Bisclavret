@@ -3,7 +3,7 @@ hsp=0
 accel =0.5;
 decel = 0.5;
 
-global.reneeBattleCheck=false;
+global.reneeFought=false;
 
 // max horz speed
 max_hsp= 9;

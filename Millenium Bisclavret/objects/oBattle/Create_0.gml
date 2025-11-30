@@ -215,8 +215,11 @@ function BattleStateVictoryCheck() {
         //somehow tell chatterbox to switch to node
         
         //this obviously needs to change when more battles are implemented
-        objRene.node_name="ReneePostBattle"
-        objRene.is_fightable="false"
+        if (global.reneeFought==true) {
+            objRene.node_name="ReneePostBattle";
+            objRene.is_fightable="false";
+        }
+        
 
         instance_destroy();
 

@@ -242,6 +242,7 @@ if (in_dialogue=false) {
 
 if (ChatterboxVariableGet("battleStart")>0) {
     ChatterboxVariableReset("battleStart");
+    global.reneeFought=true;
     
 
 /*    var target = battle_screen;
