@@ -16,6 +16,7 @@ currentAction=-1;
 currentTargets=noone;
 
 tauntCounter=0;
+activeOrPassive=0;
 
 cursor = {
     activeUser: noone,
@@ -62,7 +63,31 @@ RefreshRenderOrder = function() {
 RefreshRenderOrder();
 
 function BattleStateSelectAction() {
+    //pick active or passive state
     
+    
+    if (activeOrPassive==0) {
+        activeOrPassive=irandom_range(1,2);
+        
+        show_debug_message("active or passive:"+string(activeOrPassive));
+        show_debug_message("active or passive was rerolled");
+         
+    }
+    
+    
+    if (activeOrPassive==1) {
+            battleText="Battle State Select Action: Active"
+    }
+    if (activeOrPassive==2) {
+            battleText="Battle State Select Action: Passive" 
+    }
+     
+     
+    
+    
+    //0 = not defined, 1=active, 2=passive
+    
+
     if (!instance_exists(oMenu)) {
         
        //get current unit
@@ -79,7 +104,7 @@ function BattleStateSelectAction() {
        //if unit is player controlled:
        if (_unit.object_index==oBattleUnitPlayer) {
           //compile the action menu
-            show_debug_message(tauntCounter);
+            show_debug_message("taunt counter:"+string(tauntCounter));
             
             
             var _menuOptions=[];
@@ -123,6 +148,7 @@ function BattleStateSelectAction() {
            var _enemyAction=_unit.AIscript();
            if (_enemyAction != -1) {
                BeginAction(_unit.id, _enemyAction[0], _enemyAction[1]);
+                show_debug_message("active or passive:"+string(activeOrPassive));
            }
        }
     }
@@ -244,11 +270,15 @@ function BattleStateTurnProgression() {
     
     
     turnCount++;
+    
+    
+    show_debug_message("turncount:"+string(turnCount))
     turn++;
     //loop turns
     if (turn>array_length(unitTurnOrder)-1) {
         turn=0;
         roundCount++;
+        activeOrPassive=0;
     }
     battleState=BattleStateSelectAction;
 }

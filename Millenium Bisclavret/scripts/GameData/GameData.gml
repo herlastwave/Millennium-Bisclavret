@@ -122,8 +122,8 @@ enum MODE {
 global.player = [
     {
         name: "Bisclavret",
-        hp: 5,
-        hp_max: 5,
+        hp: 3,
+        hp_max: 3,
         strength: 1,
         isBlocking: false,
         isTaunting: true,
@@ -153,9 +153,7 @@ global.enemies = {
             return [_action, _target];*/
             
             //0 = active, 1=passive
-            var _activeOrPassive=irandom_range(0,1);
-            show_debug_message(_activeOrPassive)
-            if (_activeOrPassive<1) {
+            if (oBattle.activeOrPassive==1) {
                 var _action = actions[0];
                 var _possibleTargets=array_filter(oBattle.playerUnits, function(_unit, _index) {
                     return(_unit.hp>0); 
