@@ -15,6 +15,8 @@ currentUser=noone;
 currentAction=-1;
 currentTargets=noone;
 
+tauntCounter=0;
+
 cursor = {
     activeUser: noone,
     activeTarget: noone,
@@ -71,13 +73,15 @@ function BattleStateSelectAction() {
            battleState = BattleStateVictoryCheck;
            exit;
        }
-       
        //select action to perform
        //BeginAction(_unit.id, global.actionLibrary.attack, _unit.id)
        
        //if unit is player controlled:
        if (_unit.object_index==oBattleUnitPlayer) {
           //compile the action menu
+            show_debug_message(tauntCounter);
+            
+            
             var _menuOptions=[];
             var _subMenus = {};
             
@@ -112,7 +116,7 @@ function BattleStateSelectAction() {
                 array_push(_menuOptions, [_subMenusArray[i], SubMenu, [_subMenus[$ _subMenusArray[i]]], true]);
             }
             
-            Menu(x+300, y+500, _menuOptions);
+            Menu(x+300, y+450, _menuOptions);
             
        }
        else {
@@ -171,11 +175,13 @@ function BattleStatePerformAction() {
                }
            }
            currentAction.func(currentUser, currentTargets);
+
         }
     }
     else {//wait for delay and then end turn
         if (!instance_exists(oBattleEffect)) {
             battleWaitTimeRemaining--
+
             if (battleWaitTimeRemaining==0) {
                 battleState=BattleStateVictoryCheck;
             }
@@ -233,6 +239,10 @@ function BattleStateVictoryCheck() {
 function BattleStateTurnProgression() {
     battleText="Battle state primary placeholder text."; //reset battle text
     current_text_index=0;
+    
+    //reset blocking to false for all players
+    
+    
     turnCount++;
     turn++;
     //loop turns

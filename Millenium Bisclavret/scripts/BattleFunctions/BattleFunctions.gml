@@ -19,7 +19,12 @@ function BattleChangeHP(_target, _amount, _AliveDeadOrEither = 0) {
         _failed=true;
     } 
     if (_AliveDeadOrEither==1) && (_target.hp >0) {
+        
+    }
+    
+    if (_target.isBlocking==true) {
         _failed=true;
+        _target.isBlocking=false;
     }
     
     var _col=c_white;
@@ -37,5 +42,9 @@ function BattleChangeHP(_target, _amount, _AliveDeadOrEither = 0) {
         oBattleFloatingText,
         {font: typeyReg, col: _col, text: string(_amount)}
     );
-    if (!_failed) _target.hp = clamp(_target.hp + _amount, 0, _target.hp_max);
+    if (!_failed) {
+
+        _target.hp = clamp(_target.hp + _amount, 0, _target.hp_max);
+        
+    }
 }

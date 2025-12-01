@@ -13,12 +13,9 @@ if (cursor.active) {
     with (cursor) {
         if (activeTarget != noone) {
             if (!is_array(activeTarget)) {
-
-                show_debug_message("x: "+string(activeTarget.x)+"y: "+string(activeTarget.y));
                 
-                draw_sprite_ext(dagger,0,activeTarget.x-250,activeTarget.y-250,0.5,0.5,0,c_white,sin(get_timer()/100000)+1);
+                draw_sprite_ext(dagger,0,activeTarget.x-250+10*sin(get_timer()/100000),activeTarget.y-250,0.5,0.5,0,c_white,1);
                 
-
             }
             else {
                 draw_set_alpha(sin(get_timer()/50000)+1);
