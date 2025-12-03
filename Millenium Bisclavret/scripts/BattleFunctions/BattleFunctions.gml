@@ -33,14 +33,14 @@ function BattleChangeHP(_target, _amount, _AliveDeadOrEither = 0) {
     }
     if(_failed) {
         _col=c_white;
-        _amount="failed";
+        _amount="Parried!";
     }
     instance_create_depth(
         _target.x,
         _target.y,
         _target.depth-1,
         oBattleFloatingText,
-        {font: typeyReg, col: _col, text: string(_amount)}
+        {font: typeyRegLarge, col: _col, text: string(_amount)}
     );
     if (!_failed) {
 

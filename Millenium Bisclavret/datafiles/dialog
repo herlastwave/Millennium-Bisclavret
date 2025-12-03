@@ -9,53 +9,287 @@ Melion Bisclavret: I don't have time for this.
 Safety guy: Don't be so cold.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 708,42
+__PrivCrochet_position: 696,28
 __PrivCrochet_tags: 
 title: Renee
 ---
-<<declare $battleStart = "true">>
 <<declare $battleEnemy = "renee">>
-Renee Allard: I have nothing to say to you.
-Melion Bisclavret: Aw, cmon Renée.
+<<set $reneeVisited=0>>
+Renée Allard: Hold it right there, Bisclavret.
+<<set $battleEnemy = "renee">>
+Melion Bisclavret: Let me through, Renée. I need to–
+Renée Allard: I know exactly what you need, Bisclavret, but I cannot allow it.
+Renée Allard: You will not take more step towards that elevator.
+Renée Allard: You will return to your desk, pick up your phone, and inform Mr. Tweed that you politely decline his offer and that Ms. Allard should be reinstated.
+Melion Bisclavret: Renée, please–
+Renée Allard: You will never have this role, Bisclavret. You aren't cut out for it. Not this century.
+Renée Allard: Look around. Look at your clothes. It's like you can't even tell what year it is.
+Renée Allard: You are an anachronism. This whole company is an anachronism. It's time for all of us to grow up.
+Melion Bisclavret: That's not–
+Renée Allard: You barely know how to send email. Poor LeThèque from IT booby trapped the printer to stop you from trying to 'fix' it.
+Renée Allard: Face it, Bisclavret. *Someone* is trying to drag this place kicking and screaming into the new millennium. 
 <<jump Renee_Challenge_Init>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1001,58
+__PrivCrochet_position: 991,48
 __PrivCrochet_tags: 
 title: Renee_Challenge_Init
 ---
-The fight will now start.
-This is placeholder text.
-
-<<set $battleStart = "true">>
-<<set $battleEnemy = "renee">>
+Renée Allard: I worked my ass off for this role. I ran circles around you, Bisclavret. We both know that.
+Renée Allard: But this is the thanks I get? Demoted to paper pushing footstool for you to kick over your way up?
+Renée Allard: I suppose it was all for nothing, then. This place will never change.
+Melion Bisclavret: Sounds like you've quit already. Let me through, Renée. 
+Renée Allard: I still have my pride as a product manager, Bisclavret.
+Renée Allard: If I have to get my hands dirty to salvage that on my way out, so be it.
+Melion Bisclavret: ...so be it.
+<<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 8
-__PrivCrochet_position: 142,446
+__PrivCrochet_position: 137,442
 __PrivCrochet_tags: 
 title: Prologue
 ---
-Empty Text
+[Press 'Z' or 'SPACE' to begin.]
+
+Once upon a time,
+Back when foxes played polo,
+And tigers used to smoke tobacco,
+(Or wait, don't they still do that?)
+There was a man named Melion.
+Melion was a faithful servant to his lord.
+He toiled each day in his lord's service.
+His was a meager existence without recognition.
+But one day, he recieved a message from above.
+"Hey! Is this um... Melion Bisclavret?"
+Melion Bisclavret: "This is he."
+"Great! This is Marie-Luce, I'm calling from Mr. Tweed's office."
+Marie-Luce: "Congratulations! You've been selected for a promotion to general manager."
+Melion Bisclavret: "G–"
+Marie-Luce: "If you could come up to sign a few papers to finalize the decision. You know, just protocol."
+-> Of course!
+    Melion Bisclavret: "Right, of course."
+-> Not yet...
+    Melion Bisclavret: "I need time to think about it."
+Marie-Luce: "Well, be quick about it please. Mr. Tweed is a very busy man."
+Melion Bisclavret: "Understood. I'll be there promptly."
+Marie-Luce: "But if you'd like to celebrate a little with your co-workers on the way up, I won't stop you.
+Marie-Luce: "I'm sure everyone'll want to congratulate you on the big accomplishment!"
+-> Absolutely.
+    Melion Bisclavret: "Sure, but am I not the first to hear of this?"
+-> Absolutely not.
+    Melion Bisclavret: "Uh... right. But you're saying I'm not the first to hear of this?"
+Marie-Luce: "Well, not exactly. Gaurin found out and he's a bit of a gossip."
+Melion Bisclavret:"Gaurin!?"
+Marie-Luce: "Ha ha, you know him? He's–"
+Melion Bisclavret: "I'll be right there. Goodbye."
+*Click*
+<<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 403,404
+__PrivCrochet_position: 392,392
 __PrivCrochet_tags: 
 title: Safety
 ---
-SHC Officer: Hold up, Mel. B. 
-SHC Officer: You've been selected for a occupational compliance and safety inspection. 
-Melion Bisclavret: Please move. 
-SHC Officer: Don't be so cold hearted, Mel. B. S'just protocol.
-Melion Bisclavret: I really, *really* do not have time for this.
-SHC Officer: That's what you said last week. 
-SHC Officer: Hey, someone's gotta be concerned for well-being. 
-SHC Officer: Might as well be me. We're here to make sure that blade of yours is up to code.
-Melion Bisclavret: Who is "We"? It's always just you.
-SHC Officer: I'm loyal like that.
-SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
-SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
-Melion Bisclavret: No.
-SHC Officer: Hey now. 
+<<declare $safetyVisited = 0>>
+<<if $safetyVisited==0>>
+    SHC Officer: Hold up, Mel. B. 
+    SHC Officer: You've been randomly selected for an occupational compliance and safety inspection. 
+    Melion Bisclavret: Please move. 
+    SHC Officer: Don't be so cold hearted, Mel. B. S'just protocol.
+    Melion Bisclavret: I really, *really* do not have time for this.
+    SHC Officer: That's what you said last week. 
+    SHC Officer: Someone's gotta be concerned for your well-being. 
+    SHC Officer: Might as well be me. We're here to make sure that blade of yours is up to code.
+    Melion Bisclavret: Who is 'we'? It's always just you.
+    SHC Officer: I'm loyal like that.
+    SHC Officer: There's quite a commotion on the upper floors. Seems everyone's brandishing something or other. It's like they're preparing for war.
+    SHC Officer: So I rushed down here. Us little guys oughta' stick together, huh?
+    -> Yes.
+        Melion Bisclavret: Sure.
+        SHC Officer: Right on, Mel. B.
+    -> No.
+        Melion Bisclavret: No.
+        SHC Officer: Agree to disagree, Mel. B. 
+    SHC Officer: Anyway, would you like to start a brief safety training refresher?
+    -> No.
+        Melion Bisclavret: No.
+    -> No.
+        Melion Bisclavret: No.
+    SHC Officer: Too bad. 'S mandatory.  
+    SHC Officer: If you find yourself in a duel with a fellow employee, try to resolve the situation through dialogue. It might not always work out the way you expect, though.
+    SHC Officer: Getting into the headspace of your opponent can give you hints about their next move. If they seem focused on you, it could mean an attack is imminent.
+    SHC Officer: In that case, ready yourself and prepare to block. But if they seem distracted, take it as a sign to strike.
+    SHC Officer: Hypothetically speaking, of course. You should always resolve conflicts non-violently.
+    SHC Officer: Anyway, it looks like your sword is up to code. I'll get out of your way now.
+    <<set $safetyIsCollidable = 0 >>
+    Melion Bisclavret: Thank the lord.
+    SHC Officer: Buuuuut if you have any more questions, you can always come back to me for help. Your saftey is our number one priority.
+    SHC Officer: I'll be '[Z]'ing you.
+    <<set $safetyVisited = 1 >>
 
-<<set $safetyIsCollidable = 0 >>
+<<elseif $safetyVisited == 1>>
+    SHC Officer: You're back for more tips? 
+    SHC Officer: I got a whole booklet of em right here. You can have it, they give us extras at the branch HQ.
+    Bisclavret reluctatntly obtained a copy of 'Clarification of SHC1910.212 and SHC1910.242, as applying to hand-type office paper cutters and sharp edged hand tools'.
+    Bisclavret discretely disposed of the booklet in a nearby waste bin.
+    << set $gotBooklet = 1>>
+    Melion Bisclavret: Thanks.
+    SHC Officer: Good luck, Mel. B. It's a spicy world up there.
+    <<set $safetyVisited = 2 >>
+<<elseif $safetyVisited > 1>>
+    <<if $gotBooklet == 2>>
+        An unknown force compels Bisclavret on this pointless errand.
+        Melion Bisclavret: Is the SHC going paperless?
+        SHC Officer: Not that I heard, Mel. B. 
+        SHC Officer: But if we are, I'll be sure to hand em all off to you.
+        Melion Bisclavret: Lovely.
+        << set $gotBooklet = 3>>
+    <<endif>>
+    SHC Officer: Sorry, Mel. B. I'm out of pamphlets. I'll have more for you next week.
+    Melion Bisclavret: Next week? What happened to 'randomly selected'?
+    SHC Officer: I'll just randomly select you again? Simple as.
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 402,647
+__PrivCrochet_tags: 
+title: Gator
+---
+<<declare $gatorVisited = 0>>
+<<if $gatorVisited==0>>
+    Melion Bisclavret: Why so glum, Eugène.
+    Eugène: Oh, hey Melion. Just got fired. 
+    <<set $gatorVisited = 1>>
+<<elseif $gatorVisited==1>>
+    <<if $reneeVisited==0>>
+        Eugène: So, you beat Allard. Wow.
+        Melion Bisclavret: Indeed. 
+    <<endif>>
+    Eugène: So it goes, Melion. So it goes.
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 695,565
+__PrivCrochet_tags: 
+title: Thrower
+---
+<<declare $throwerVisited = 0>>
+<<if $throwerVisited == 0>>
+    Melion Bisclavret: What are you doing?
+    Cateline: Well, I heard we were going 'paperless'... So I thought I'd be proactive.
+    Melion Bisclavret: You don't look very active.
+    Cateline: That's just it, I don't know if I'm ready to let go yet...
+    << if $gotBooklet == 1>>
+        Cateline: I saw you throwing out a ream for the officer over there. Is SHC going paperless too?
+        Melion Bisclavret: Hopefully.
+        Cateline: Hmm... could you ask the officer back there for me?
+        Melion Bisclavret: Why don't you ask him yourself?
+        Cateline: I would, but I'm juggling a lot of things right now.
+        -> Offer help.
+            << set $gotBooklet = 2>>
+            Melion Bisclavret: I'll let you know.
+            << set $throwerVisited = 1>>
+        -> Not my problem.
+            << set $throwerVisited = 2>>
+            Melion Bisclavret: Good luck with that.
+    << endif>>
+<< elseif $throwerVisited==2>>
+    Cateline: Hmm... could you ask the officer back there for me?
+    -> Offer help.
+        << set $gotBooklet = 2>>
+        Melion Bisclavret: I'll let you know.
+        << set $throwerVisited = 1>>
+    -> Not my problem.
+        << set $throwerVisited = 2>>
+        Melion Bisclavret: Good luck with that.
+<< elseif $throwerVisited == 1>>
+    <<if $gotBooklet == 3>>
+        Cateline: Sooooo...?
+        Melion Bisclavret: SHC has paper coming out the wazoo.
+        Cateline: Oh... I guess I jumped the gun... I'll keep holding onto these to be sure.
+        << set $gotBooklet = 4>>
+        << set $throwerVisited = 5>>
+    << elseif $gotBooklet == 1 >>
+        Cateline: I saw you throwing out a ream for the officer over there. Is SHC going paperless too?
+        Melion Bisclavret: Hopefully.
+        Cateline: Hmm... could you ask the officer over there for me?
+        Melion Bisclavret: Why don't you ask him yourself?
+        Cateline: I would, but I have to keep these papers from falling until I know for sure.
+        << set $gotBooklet = 2>>
+    <<endif>>
+    Melion Bisclavret: Good luck with that.
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 706,296
+__PrivCrochet_tags: 
+title: Dandy
+---
+<<declare $dandyVisited = 0>>
+<<if $dandyVisited == 0>>
+    ...
+    Does Bisclavret *really* want to get involved?
+    -> Hell no!
+        Melion Bisclavret: (Whoof...)
+    -> Sure.
+        Melion Bisclavret: Hey.
+        Dandy D'airelle: Bon matin, mon sieur Bisclavret. 
+        Melion Bisclavret: (Urgh.)
+        Dandy D'airelle: My heartfelt felicitations on your promotion. I'm relieved to know *someone* will bring a little class back to this place.
+        Melion Bisclavret: Thanks.
+        Dandy D'airelle: At least you have the decency to dress 'tenue de ville'. One would imagine so-called 'professionals' would be capable of matching textiles, but alas.
+        Dandy D'airelle: Just look at Mademoiselle Allard down there. Absurd. Bare fleece vests will *never* happen. And what in god's name are those pants?
+        Melion Bisclavret: She does yoga, I think. For mindfulness.
+        Dandy D'airelle: If she does, it isn't working. She's looks indignant. Downright apoplectic. Why?
+        -> Because of me.
+            Melion Bisclavret: Probably because I just took her job.
+            Dandy D'airelle: Oh. Well...
+            Melion Bisclavret: It happens.
+            <<set $dandyVisited=1>>
+        -> Fashion angst.
+            Melion Bisclavret: She isn't fashionable like you are, Dandy D'airelle.
+            Dandy D'airelle: Neither are you, but you seem quite calm mon sieur Bisclavret. 
+            Melion Bisclavret: Ouch.
+            <<set $dandyVisited=1>>
+<<elseif $dandyVisited==1>>
+    Dandy D'airelle: ...
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 976,284
+__PrivCrochet_tags: 
+title: ReneePostBattle
+---
+<<if $reneeVisited==0>>
+    Renée Allard: I have nothing to say to you.
+    Melion Bisclavret: Renée...
+    Renée Allard: Go. My heart wasn't in it. I resign.
+    Renée Allard: It's your job now. If you can get past the others.
+    Melion Bisclavret: The others...?
+    Renée Allard: You think I'm the only one in this company that's got a problem with you, Bisclavret? You're naïve. LeThéque is planning to ambush you in the elevator.
+    Melion Bisclavret: Now you want to help me...?
+    Renée Allard: I don't want anything, Bisclavret. I'm just frustrated. Frustrated and exhausted.
+    Renée Allard: You're stupid and abrasive... but not any more so than Gaurin or Tweed or anyone else in this place.
+    Melion Bisclavret: Renée, if you're still mad about us–
+    Renée Allard: Shut up, Bisclavret. Not another word. 
+    Melion Bisclavret: ...
+    Renée Allard: Don't look back on your way up. Goodbye.
+    <<set $reneeVisited=1>>
+<<elseif $reneeVisited==1>>
+    Renée Allard: ...
+<<endif>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1014,-170
+__PrivCrochet_tags: 
+title: ReneeFledBattle
+---
+Renée Allard: You're running away? Are you serious, Bisclavret?
+Bisclavret looks for an opening, some way to maneuver past Renée without fighting.
+No luck... The hallway is too narrow, however wide it might seem from this angle.
+Melion Bisclavret: No. 
+Melion Bisclavret: I just needed a little break.
+Renée Allard: ...
+Melion Bisclavret: ...
+<<set $battleStart = 1>>
 ===

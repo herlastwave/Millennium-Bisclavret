@@ -1,4 +1,6 @@
-event_inherited()
+event_inherited();
+
+node_name="Safety"
 
 ChatterboxVariableDefault("safetyIsCollidable", 1)
 

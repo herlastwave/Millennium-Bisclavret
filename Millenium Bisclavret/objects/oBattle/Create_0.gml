@@ -1,3 +1,5 @@
+window_set_size(1440, 900);
+
 instance_deactivate_all(true);
 
 units = [];
@@ -7,13 +9,15 @@ unitRenderOrder=[];
 
 turnCount =0;
 roundCount=0;
-battleWaitTimeFrames=60;
+battleWaitTimeFrames=90;
 battleWaitTimeRemaining=0;
 battleText="Battle state startup placeholder text.";
 current_text_index=0;
 currentUser=noone;
 currentAction=-1;
 currentTargets=noone;
+
+fleeing=false;
 
 tauntCounter=0;
 activeOrPassive=0;
@@ -31,7 +35,7 @@ cursor = {
 
 menu_hover=0;
 
-var enemy_pos_x=display_get_width()-600;
+var enemy_pos_x=1150;
 var enemy_pos_y=360;
 
 var player_pos_x=545;
@@ -76,14 +80,18 @@ function BattleStateSelectAction() {
     
     
     if (activeOrPassive==1) {
-            battleText="Battle State Select Action: Active"
+            //battleText="Renée remembers. She narrows her eyes."
+        battleText=enemyUnits[0].activeLine;
+        
+        
+        
+        
+            
     }
     if (activeOrPassive==2) {
-            battleText="Battle State Select Action: Passive" 
+        battleText=enemyUnits[0].passiveLine; 
     }
      
-     
-    
     
     //0 = not defined, 1=active, 2=passive
     
@@ -235,12 +243,28 @@ function BattleStateVictoryCheck() {
     RefreshEnemyHealthOrder();
     
     if (PlayerUnitsByHP[0].hp <= 0) {
-        room_goto(game_over);
+         for (var i=0; i<array_length(global.player); i++) {
+            global.player[0].hp = playerUnits[0].hp_max;
+        }
+        
+        instance_activate_all();
+        //somehow tell chatterbox to switch to node
+        
+        //this obviously needs to change when more battles are implemented
+        if (global.reneeFought==true) {
+            objRene.node_name="ReneeRetry";
+            objRene.is_fightable="true";
+        }
+        
+        //update to include other fighters
+        
+
+        instance_destroy();
     }
     
     if (EnemyUnitsByHP[0].hp<=0) {
         for (var i=0; i<array_length(global.player); i++) {
-            //global.player[i].hp = playerUnits[i].hp;
+            global.player[0].hp = playerUnits[0].hp_max;
         }
         
         instance_activate_all();
@@ -252,12 +276,25 @@ function BattleStateVictoryCheck() {
             objRene.is_fightable="false";
         }
         
+        //update to include other fighters
+        
 
         instance_destroy();
-
         
     }
     
+    if (fleeing==true) {
+        global.player[0].hp = playerUnits[0].hp;
+        
+        instance_activate_all();
+        
+        if (global.reneeFought==true) {
+            global.enemies.renee.hp = enemyUnits[0].hp;
+            objRene.node_name="ReneeFledBattle";
+            objRene.is_fightable="true";
+        }
+        instance_destroy();
+    }
     
     battleState=BattleStateTurnProgression;
 }

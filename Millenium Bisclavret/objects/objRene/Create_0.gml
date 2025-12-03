@@ -13,4 +13,3 @@ challange_text = [
 
 node_name="Renee";
 
-ChatterboxVariableDefault("battleStart", 0);

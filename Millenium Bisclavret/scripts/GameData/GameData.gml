@@ -2,15 +2,15 @@ global.actionLibrary =
 {
     taunt: {
         name: "Taunt",
-        description: "{0} put himself in harm's way to become stronger. He momentarily deals and takes 2x damage.",
+        description: "{0} put himself in harm's way to momentarily become stronger.",
         subMenu: -1,
-        targetRequired: true,
-        targetEnemyByDefault: true,
-        targetAll: MODE.NEVER,
+        targetRequired: false,
+        targetEnemyByDefault: false,
         //effectSprite: undefined,
         effectOnTarget: MODE.ALWAYS,
         func: function(_user, _targets) {
-            //taunt code
+            //taunt code 
+            _user.isBlocking=false;
             oBattle.tauntCounter++;
 
             show_debug_message("taunted")
@@ -18,7 +18,7 @@ global.actionLibrary =
     },
     block: {
         name: "Block",
-        description: "{0} Blocked.",
+        description: "{0} blocked.",
         subMenu: -1,
         targetRequired: false,
         targetEnemyByDefault: false,
@@ -28,11 +28,14 @@ global.actionLibrary =
             //block code
             
             _user.isBlocking=true;
+            if (oBattle.tauntCounter>0) {
+                oBattle.tauntCounter=0;
+            }
         }
     },
     attack: {
         name: "Strike",
-        description: "{0} Struck!",
+        description: "{0} struck!",
         subMenu: -1,
         targetRequired: true,
         targetEnemyByDefault: true,
@@ -40,7 +43,7 @@ global.actionLibrary =
         effectSprite: sAttack,
         effectOnTarget: MODE.ALWAYS,
         func: function(_user, _targets) {
-            
+            _user.isBlocking=false;
             var _damage=ceil(_user.strength);
             if (oBattle.tauntCounter>0) {
                 _damage=2*_user.strength;
@@ -52,7 +55,7 @@ global.actionLibrary =
     },
     charge: {
         name: "Charge",
-        description: "{0} Charged and struck!",
+        description: "{0} charged and struck!",
         subMenu: "Special",
         targetRequired: true,
         targetEnemyByDefault: true, //0: party/self, 1: enemy
@@ -68,26 +71,28 @@ global.actionLibrary =
     },
     flee: {
         name: "Flee",
-        description: "{0} Fled...",
-        subMenu: "Special",
+        description: "{0} fled...",
+        subMenu: -1,
         targetRequired: false,
         targetEnemyByDefault: false, //0: party/self, 1: enemy
         targetAll: MODE.NEVER,
         //effectSprite: undefined,
         effectOnTarget:  MODE.ALWAYS,
-        func: function() {
+        func: function(_user) {
+            _user.isBlocking=false;
+            oBattle.fleeing=true;
             show_debug_message("fled")
         }
     },
     
     enemyActive: {
         name: "Enemy Active",
-        description: "{0}'s Enemy Active Dialogue TBD",
+        description: "{0} struck!",
         subMenu: -1,
         targetRequired: true,
         targetEnemyByDefault: false, //0: party/self, 1: enemy
         targetAll: MODE.NEVER,
-        //effectSprite: undefined,
+        effectSprite: sAttack,
         effectOnTarget:  MODE.ALWAYS,
         func: function(_user, _targets) { 
             var _damage=ceil(_user.strength);
@@ -97,7 +102,7 @@ global.actionLibrary =
     },
     enemyPassive: {
         name: "Enemy Passive",
-        description: "{0}'s Enemy Passive Dialogue TBD",
+        description: "{0} faltered and missed the chance to strike.",
         subMenu: -1,
         targetRequired: false,
         targetEnemyByDefault: false, //0: party/self, 1: enemy
@@ -128,7 +133,7 @@ global.player = [
         isBlocking: false,
         isTaunting: true,
         sprites: {idle: battle_player},
-        actions: [global.actionLibrary.taunt, global.actionLibrary.block, global.actionLibrary.attack, global.actionLibrary.charge, global.actionLibrary.flee]
+        actions: [global.actionLibrary.block, global.actionLibrary.attack, global.actionLibrary.taunt, global.actionLibrary.flee]
         
     }
 ]
@@ -142,6 +147,8 @@ global.enemies = {
         isBlocking: false,
         strength: 1,
         sprites: {idle: battle_renee},
+        activeLine: "Renée remembers. She narrows her eyes.",
+        passiveLine: "Renée is thinking about updating her licked-in status. She seems distracted... Isn't this a fight?",
         actions: [/*global.actionLibrary.attack*/ global.actionLibrary.enemyActive, global.actionLibrary.enemyPassive],
         AIscript : function() {
             //attack random target (alaways bisclavret)
@@ -170,14 +177,40 @@ global.enemies = {
         }
     },
     letheque: {
-        name: "LeThèque",
-        hp: 6,
-        hp_max: 6,
+        name: "LeThéque",
+        postBattleNode: "LethequePostBattle",
+        hp: 5,
+        hp_max: 5,
+        isBlocking: false,
         strength: 1,
-        sprites: {idle: battle_enemy},
-        actions: [global.actionLibrary.attack],
+        sprites: {idle: battle_lethqeue},
+        activeLine: "Le Active line.",
+        passiveLine: "Le passive line.",
+        actions: [/*global.actionLibrary.attack*/ global.actionLibrary.enemyActive, global.actionLibrary.enemyPassive],
         AIscript : function() {
+            //attack random target (alaways bisclavret)
+            /*var _action = actions[0];
+            var _possibleTargets=array_filter(oBattle.playerUnits, function(_unit, _index) {
+                return(_unit.hp>0);
+            });
+            var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+            return [_action, _target];*/
             
+            //0 = active, 1=passive
+            if (oBattle.activeOrPassive==1) {
+                var _action = actions[0];
+                var _possibleTargets=array_filter(oBattle.playerUnits, function(_unit, _index) {
+                    return(_unit.hp>0); 
+                });
+                //var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+                var _target = oBattle.playerUnits[0];
+                return [_action, _target];
+            }
+            else {
+                var _action=actions[1];
+                var _target=oBattle.playerUnits[0];
+                return [_action, _target];
+            }
         }
     },
     guarin: {

@@ -1,4 +1,13 @@
 
+x += x_frac;         //Add the fraction back to your position
+x_frac = x % 1;        //Get the new fraction
+x_int = x - x_frac;    // Get the rounded position
+x = x_int;   
+
+
+if (ChatterboxIsStopped() && keyboard_check_pressed(vk_escape)) {
+    in_dialogue=false;
+}
 
 // get inputs
 var _key_left = keyboard_check(vk_left);
@@ -6,10 +15,10 @@ var _key_right = keyboard_check(vk_right);
 
 // get move direction
 if (currently_talking = noone) { 
-    var _dir = _key_right - _key_left;
+    _dir = _key_right - _key_left;
 }
 else {
-    var _dir = 0;
+    _dir = 0;
 }
 
 // slow down char if no dir is pressed
@@ -32,16 +41,35 @@ hsp = clamp(hsp, -max_hsp,max_hsp);
 
 // horizontal collision for barriers
 if (place_meeting(x+hsp,y,barriers)) {
+    repeat (abs(hsp) + 1) {
+            if (place_meeting(x + sign(hsp), y, barriers))
+               break;
+            x += hsp;
+         }
+         
+        if facingForward {
+            hsp=-accel;
+        }
+        
+        if !facingForward {
+            hsp=accel;
+        }
+
     
-    hsp = 0;
 }
+
+
 
 // collide with solid npcs
 
+
+
 if (place_meeting(x+hsp,y,npc_container)) {
     var who_is_here = instance_place(x,y, npc_container);
+
     
     if (who_is_here != noone && who_is_here.is_collidable == true) {
+        /*
         var _x = round(x);
         var _pixel = sign(hsp);
         while (!place_meeting(_x+_pixel,y,npc_container)) {
@@ -50,6 +78,23 @@ if (place_meeting(x+hsp,y,npc_container)) {
         }
         x=_x;
         hsp = 0;
+         * */
+        
+        repeat (abs(hsp) + 1) {
+            if (place_meeting(x + sign(hsp), y, npc_container))
+               break;
+            x += hsp;
+         }
+         
+        if _dir > 0{
+            hsp=-accel;
+        }
+
+        else {
+            hsp = 0;
+        }
+
+
     }
     
     if (who_is_here != noone && who_is_here.is_fightable == true) {
@@ -107,22 +152,18 @@ if (place_meeting(x+hsp,y,npc_container)) {
 }
 
 
-
-
-
-
-
-// get horz. speed (pos right, neg left)
-x += x_frac;         //Add the fraction back to your position
-x_frac = x % 1;        //Get the new fraction
-x_int = x - x_frac;    // Get the rounded position
-x = x_int;   
-
-// get horz. speed (pos right, neg left)
 hsp += _dir*accel;
-
 //commit to movement
 x+=hsp;
+
+
+
+
+
+// get horz. speed (pos right, neg left)
+
+// get horz. speed (pos right, neg left)
+
 
 //change sprites accordingly
 
@@ -130,15 +171,21 @@ if (hsp > 0) {
     sprite_index = player_run_cycle;
     image_xscale = abs(image_xscale);
     facingForward = true;
+    moving=true;
 }
 else if (hsp < 0) {
     sprite_index = player_run_cycle;
     image_xscale = -abs(image_xscale);
     facingForward = false;
+    moving=true;
+    
 }
 else {
     sprite_index = player_idle;
+    moving=false;
 }
+
+
 
 
 /*
@@ -186,6 +233,7 @@ if (place_meeting(x+hsp,y,npc_container)) {
     
     if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
         in_dialogue = true;
+        
     }
     if (in_dialogue=true) {
         
@@ -222,6 +270,7 @@ if (place_meeting(x+hsp,y,npc_container)) {
                     current_dialogue = ChatterboxGetContentSpeech(chatterbox, 0);
                     current_name = ChatterboxGetContentSpeaker(chatterbox, 0); 
                     current_text_index = 0;
+                    choice_select=0;
                 } 
             }
             else {
