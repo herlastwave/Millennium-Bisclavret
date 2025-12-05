@@ -36,12 +36,12 @@ Renée Allard: Face it, Bisclavret. *Someone* is trying to drag this place kicki
 <<jump Renee_Challenge_Init>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 990,47
+__PrivCrochet_position: 986,45
 __PrivCrochet_tags: 
 title: Renee_Challenge_Init
 ---
 Renée Allard: I worked my ass off for this role. I ran circles around you. We both know that.
-Renée Allard: But this is the thanks I get? Demoted to paper pushing footstool for you to kick over your way up?
+Renée Allard: But this is what I get in the end? To be a paper pushing footstool for you to kick over your way up?
 -> Exactly.
     Melion Bisclavret: E–
 -> No way.
@@ -165,7 +165,7 @@ title: Safety
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 402,647
+__PrivCrochet_position: 395,644
 __PrivCrochet_tags: 
 title: Gator
 ---
@@ -173,12 +173,55 @@ title: Gator
 <<if $gatorVisited==0>>
     Melion Bisclavret: Why so glum, Eugène.
     Eugène: Oh, hey Melion. Just got fired. 
+    -> My condolences.
+        Melion Bisclavret: I'm sorry to hear that.
+        Eugène: Don't be, it's been a long time coming.
+    -> Deserved, surely.
+        Melion Bisclavret: You had it coming, slacker.
+        Eugène: Ha ha. Thanks Melion. 
+        Eugène: It's true, though.
+    Melion Bisclavret: Who made the call? Renée?
+    Eugène: Nah. Allard's just a product manager. Not much real power in that role.
+    Eugène: It was the higher ups. Market's down right now. 
+    Eugène: 'Downsizing'.
+    Melion Bisclavret: Hm. I'm sure Renée didn't lift a finger to stop it, though.
+    Eugène: Don't be unfair, Melion. It ain't personal.
+    Eugène: 'Sides, I heard you're her boss now. She ain't gonna be thrilled.
+    Melion Bisclavret: I still need to sign the papers in Tweed's office.
+    Eugène: Mhm. Good luck getting there. Allard is already guarding the elevator.
+    -> What about the stairs?
+        Eugène: One of the execs greased em up. Scary guy wearing a brass mask.
+        Melion Bisclavret: Gaurin... 
+        Eugène: Oh, and someone else rigged up a bunch of booby traps. Tripwires, swinging blades, buzzsaws, the works.
+        Eugène: Just like the ones in front of the printer. Seems like a fire hazard to me.
+    -> No other way but through.
+        Eugène: Not since that masked guy greased the stairs. One of the execs, I think.
+        Melion Bisclavret: Gaurin... That's uncharacteristically tame for him.
+        Eugène: I think it's just a distraction from booby traps. You know, tripwires, swinging blades, buzzsaws, the works.
+        Eugène: Like the ones in front of the printer. Seems like a fire hazard to me.
+    Melion Bisclavret: So I'll have to get past Renée...
+    Eugène: Mhm.
+    Eugène: Whatever's waiting for you down there, I can't say you don't deserve it.
+    Melion Bisclavret: Whatever. 
+    Eugène: Good luck, Melion. Let me know how it goes with Allard.
+    Melion Bisclavret: Will do, Eugène.
     <<set $gatorVisited = 1>>
 <<elseif $gatorVisited==1>>
-    <<if $reneeVisited==0>>
+    <<if $reneeVisited==1>>
         Eugène: So, you beat Allard. Wow.
         Melion Bisclavret: Indeed. 
+        Eugène: Guess she's gonna leave now.
+        Melion Bisclavret: Probably.
+        Eugène: For the best, I think. 
+        Melion Bisclavret: Mhm.
+        Eugène: She's got ideas and ambition. Ain't no place for those here these days.
+        Eugène: World's changing. This place has no future.
+        Melion Bisclavret: You're just saying that because you got let go.
+        Eugène: Maybe so. But you only disagree because you got promoted.
+        <<set $gatorVisited=2>>
     <<endif>>
+    Eugène: So it goes, Melion. So it goes.
+<<elseif $gatorVisited==2>>
     Eugène: So it goes, Melion. So it goes.
 <<endif>>
 ===
@@ -256,9 +299,9 @@ title: Dandy
         Melion Bisclavret: She does yoga, I think. For mindfulness.
         Dandy D'airelle: If she does, it isn't working. She's looks indignant. Downright apoplectic. Why?
         -> Because of me.
-            Melion Bisclavret: Probably because I just took her job.
-            Dandy D'airelle: Oh. Well...
-            Melion Bisclavret: It happens.
+            Melion Bisclavret: Probably because I'm her new boss.
+            Dandy D'airelle: Are you that bad? Now I'm scared...
+            Melion Bisclavret: You should be.
             <<set $dandyVisited=1>>
         -> Fashion angst.
             Melion Bisclavret: She isn't fashionable like you are, Dandy D'airelle.
@@ -266,14 +309,15 @@ title: Dandy
             Melion Bisclavret: Ouch.
             <<set $dandyVisited=1>>
 <<elseif $dandyVisited==1>>
-    Dandy D'airelle: ...
+    Bisclavret decides to pretend Dandy D'airelle isn't there.
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 974,283
+__PrivCrochet_position: 971,280
 __PrivCrochet_tags: 
 title: ReneePostBattle
 ---
+<<declare $knowsLeTheque=0>>
 <<if $reneeVisited==0>>
     Renée Allard: Ugh...
     Renée Allard: I have nothing to say to you.
@@ -284,20 +328,20 @@ title: ReneePostBattle
     Renée Allard: You think I'm the only one in this company that's got a problem with you, Bisclavret? 
     Renée Allard: You're naïve. LeThéque is planning to ambush you in the elevator.
     -> LeThéque?
-        Melion Bisclavret: Who is LeThéque?
-        Renée Allard: Don't play dumb. Alix LeThéque from IT. He fixes your computer twice a week. 
-        Melion Bisclavret: Oh. I never got his name.
+        Melion Bisclavret: Who's LeThéque?
+        Renée Allard: Don't play dumb. Alix LeThéque from IT, fixes your computer twice a week. 
+        <<set $knowsLeTheque=1>>
+        Melion Bisclavret: Oh. I never got the name.
         Renée Allard: Hm. You never thought to ask? That's just like you, isn't it? 
-        Renée Allard: You use people up. And you don't care. 
-        Renée Allard: Because you don't even notice.
+        Renée Allard: You use people up. And you don't care, 
+        Renée Allard: because you don't even notice.
     -> You're helping me?
         Melion Bisclavret: Wait a moment. *Now* you want to help me...?
         Renée Allard: I don't want anything, Bisclavret. I'm just frustrated. Frustrated and exhausted.
-        Melion Bisclavret: You're so dense, and you don't even realize it. 
+        Melion Bisclavret: You're so dense, and you don't even know it.
     Melion Bisclavret: Renée, if you're still mad about us–
     Renée Allard: Shut up, please. Not another word. 
     -> ...
-        Melion Bisclavret: ...
     -> Are you?
         Melion Bisclavret: A–
         Renée Allard: Stop. I'm serious. 
@@ -308,10 +352,11 @@ title: ReneePostBattle
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1011,-172
+__PrivCrochet_position: 1010,-173
 __PrivCrochet_tags: 
 title: ReneeFledBattle
 ---
+Renée Allard: Wh...
 Renée Allard: You're running away? Are you serious, Bisclavret?
 -> Yes.
     Melion Bisclavret: And if I am?
@@ -333,7 +378,7 @@ __PrivCrochet_tags:
 title: ReneeRetry
 ---
 Renée Allard: That was embarrassing for you.
-Bisclavret is exhausted... and humiliated.
+Bisclavret is exhausted and humiliated.
 Melion Bisclavret: ...
 Melion Bisclavret: Can we start over?
 Renée Allard: It's a little late for that, bisclavret.
@@ -343,13 +388,95 @@ Somehow, Bisclavret gathers himself up and draws his sword once more.
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1391,323
+__PrivCrochet_position: 1389,320
 __PrivCrochet_tags: 
 title: Elevator
 ---
 The Elevator: Going up?
-    -> Yup
-        <<set $elevatorState=1>>
-    -> Nope
-Melion Bisclavret: Cool
+-> Yup.
+    <<set $elevatorState=1>>
+-> Nope.
+    Melion Bisclavret: Not yet.
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1415,532
+__PrivCrochet_tags: 
+title: LeThequePreBattle
+---
+Melion Bislcavret: 'Morning.
+Alix LeThéque: ...
+Melion Bislcavret: Could you move? I need to hit the button.
+Alix LeThéque: I cannot.
+-> Get out of the way.
+    Melion Bislcavret: Move it, bub. I'm in a hurry.
+    Alix LeThéque: ...
+    Melion Bislcavret: I've got very important buissness to attend to, so–
+-> Hit it for me.
+    Melion Bislcavret: Hit it for me, then. 78th floor, exec suite.
+    Alix LeThéque: ...
+    Melion Bislcavret: Look, I've got places to be right now. So–
+Alix LeThéque: I cannot let you past.
+Melion Bislcavret: What.
+Alix LeThéque: Do you know who I am, Sir?
+<<if $knowsLeTheque==1>>
+    Melion Bislcavret: Sure. LeThéque, right?
+<<endif>>
+Melion Bislcavret: You're from IT. You fix my computer sometimes.
+Alix LeThéque: Sometimes?
+Alix LeThéque: I graduated five years ago. I've worked here for three years and 41 weeks. 
+Melion Bislcavret: So? I've been here for sixteen.
+Alix LeThéque: Biweekly, you encounter some kind of novel technological problem. Every 2.3 times per week, on average.
+Melion Bislcavret: So I'm not a tech whiz. Sue me.
+Alix LeThéque: Each time it takes me approximately 23 minutes to make the repair,
+Alix LeThéque: and 18.5 minutes to explain the problem to you, in the hopes it won't happen again.
+Alix LeThéque: Always in vain, of course.
+Melion Bislcavret: Okay? I do my job and you do yours. That's life.
+Alix LeThéque: I've spent 18,804 minutes at your desk, sir. That's 313 straight hours of my life.
+Alix LeThéque: Excluding the time I spend singlehandedly preventing potential catastrophes from escaping the confines of your cubicle.
+Melion Bislcavret: Wait, are you talking about...
+-> The email scams?
+    Melion Bislcavret: The emails I opened? How was I supposed to know they were fake?
+    Alix LeThéque: Because I explained it to you, sir. On eleven separate occasions.
+    Melion Bislcavret: They seemed convincing to me...
+-> The password list?
+    Melion Bislcavret: Keeping my passwords in a spreadsheet? How else am I supposed to remember them all?
+    Alix LeThéque: You uploaded the file to your FierceBook profile. Three seperate times.
+    Melion Bislcavret: So I clicked on the wrong picture. I was just trying out that 'networking' thing Renée mentioned...
+-> The printer?
+    Melion Bislcavret: (Actually, I probably shouldn't mention that one...)
+    Melion Bislcavret: Wait, are you talking about...
+    -> The email scams?
+        Melion Bislcavret: The fake emails I opened? How was I supposed to know they were scams?
+        Alix LeThéque: Because I explained it to you, sir. On eleven separate occasions.
+        Melion Bislcavret: They seemed convincing to me...
+    -> The password list?
+        Melion Bislcavret: Keeping my passwords in a spreadsheet? How else am I supposed to remember them all?
+        Alix LeThéque: You uploaded the file to your FierceBook profile. Three times.
+        Melion Bislcavret: I was just trying to post a picture of Renée and I's... 
+Melion Bislcavret: Look, it doesn't matter. You fixed it!
+
+Alix LeThéque: I challenge you, Melion Bislcavret. 
+Alix LeThéque: En garde!
+<<set $lethequeStart = 1>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1793,165
+__PrivCrochet_tags: 
+title: LethequePostBattle
+---
+LethequePostBattle
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1667,-13
+__PrivCrochet_tags: 
+title: LethequeFledBattle
+---
+LethequeFledBattle
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1819,424
+__PrivCrochet_tags: 
+title: LethequeRetry
+---
+LethequeRetry
 ===

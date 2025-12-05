@@ -301,3 +301,16 @@ if (ChatterboxVariableGet("battleStart")>0) {
     NewEncounter([global.enemies.renee],battle_background);
     
 }
+
+if (ChatterboxVariableGet("lethequeStart")>0) {
+    ChatterboxVariableReset("lethequeStart");
+    global.lethequeFought=true;
+    
+
+/*    var target = battle_screen;
+    TransitionStart(target,sqNoOut, sqFadeIn);
+    */
+
+    NewEncounter([global.enemies.letheque],battle_background);
+    
+}

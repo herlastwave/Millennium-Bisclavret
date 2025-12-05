@@ -4,6 +4,7 @@ accel =0.5;
 decel = 0.5;
 
 global.reneeFought=false;
+global.lethequeFought=false;
 
 // max horz speed
 max_hsp= 9;
@@ -36,6 +37,7 @@ ChatterboxVariableDefault("gotBooklet", 0)
 ChatterboxVariableDefault("reneeVisited", -1)
 ChatterboxVariableDefault("battleStart", 0);
 
+ChatterboxVariableDefault("lethequeStart", 0);
 is_colliding=false;
 
 drawing_options = false;

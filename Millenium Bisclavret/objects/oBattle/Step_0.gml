@@ -13,9 +13,9 @@ if (cursor.active) {
         var _keyCancel=false;
         confirmDelay++;
         if (confirmDelay > 1) {
-            _keyConfirm=keyboard_check_pressed(ord("Z")) + keyboard_check_pressed(ord("SPACE"));
+            _keyConfirm=keyboard_check_pressed(ord("Z")) + keyboard_check_pressed(vk_space);
             _keyCancel=keyboard_check_pressed(vk_escape)+keyboard_check_pressed(ord("X"));
-            _keyToggle=keyboard_check_pressed(vk_shift);
+            //_keyToggle=keyboard_check_pressed(vk_shift);
         }
         var _moveH = _keyRight-_keyLeft;
         var _moveV = _keyDown - _keyUp;
