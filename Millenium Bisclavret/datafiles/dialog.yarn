@@ -329,7 +329,7 @@ title: ReneePostBattle
     Renée Allard: You're naïve. LeThéque is planning to ambush you in the elevator.
     -> LeThéque?
         Melion Bisclavret: Who's LeThéque?
-        Renée Allard: Don't play dumb. Alix LeThéque from IT, fixes your computer twice a week. 
+        Renée Allard: Don't play dumb. Alix LeThéque from IT, she fixes your computer twice a week. 
         <<set $knowsLeTheque=1>>
         Melion Bisclavret: Oh. I never got the name.
         Renée Allard: Hm. You never thought to ask? That's just like you, isn't it? 
@@ -388,7 +388,7 @@ Somehow, Bisclavret gathers himself up and draws his sword once more.
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1389,320
+__PrivCrochet_position: 1388,318
 __PrivCrochet_tags: 
 title: Elevator
 ---
@@ -399,7 +399,7 @@ The Elevator: Going up?
     Melion Bisclavret: Not yet.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1415,532
+__PrivCrochet_position: 1413,531
 __PrivCrochet_tags: 
 title: LeThequePreBattle
 ---
@@ -423,8 +423,10 @@ Alix LeThéque: Do you know who I am, Sir?
 <<endif>>
 Melion Bislcavret: You're from IT. You fix my computer sometimes.
 Alix LeThéque: Sometimes?
-Alix LeThéque: I graduated five years ago. I've worked here for three years and 41 weeks. 
-Melion Bislcavret: So? I've been here for sixteen.
+Alix LeThéque: I graduated from KIT five years ago. I studied information systems and mechanical engineering.
+Melion Bislcavret: Congratulations. I went to school too. Managerial accounting, by the way.
+Alix LeThéque: I've worked here for three years and 41 weeks. 
+Melion Bislcavret: So? I've been here sixteen.
 Alix LeThéque: Biweekly, you encounter some kind of novel technological problem. Every 2.3 times per week, on average.
 Melion Bislcavret: So I'm not a tech whiz. Sue me.
 Alix LeThéque: Each time it takes me approximately 23 minutes to make the repair,
@@ -446,16 +448,30 @@ Melion Bislcavret: Wait, are you talking about...
     Melion Bislcavret: (Actually, I probably shouldn't mention that one...)
     Melion Bislcavret: Wait, are you talking about...
     -> The email scams?
-        Melion Bislcavret: The fake emails I opened? How was I supposed to know they were scams?
+        Melion Bislcavret: The emails I opened? How was I supposed to know they were fake?
         Alix LeThéque: Because I explained it to you, sir. On eleven separate occasions.
         Melion Bislcavret: They seemed convincing to me...
     -> The password list?
         Melion Bislcavret: Keeping my passwords in a spreadsheet? How else am I supposed to remember them all?
-        Alix LeThéque: You uploaded the file to your FierceBook profile. Three times.
-        Melion Bislcavret: I was just trying to post a picture of Renée and I's... 
+        Alix LeThéque: You uploaded the file to your FierceBook profile. Three seperate times.
+        Melion Bislcavret: So I clicked on the wrong picture. I was just trying out that 'networking' thing Renée mentioned...
 Melion Bislcavret: Look, it doesn't matter. You fixed it!
-
-Alix LeThéque: I challenge you, Melion Bislcavret. 
+Alix LeThéque: That's what I do with my degrees sir. My entire professional life is dedicated to dealing with you.
+Alix LeThéque: I fix your information systems and engineer deterrences to your behavior.
+Melion Bislcavret: Have you ever considered that you might be the problem?
+Alix LeThéque: I have thoroughly considered every possibility. I briefly considered the idea that I'm already dead, and this is my eternal punishment for sins unrepented.
+Alix LeThéque: But the P-value on that one is pretty low, all things considered.
+Melion Bislcavret: Well, I've been promoted to the exec department. If you let me get there, you'll never see me again.
+Alix LeThéque: You cannot fool me, Melion Bislcavret. It isn't that simple.
+Alix LeThéque: You cannot be trusted with authority over the administrative system. You will infect the whole company with your incompetence.
+Alix LeThéque: The scale of your ineptitude is almost supernatural. With more power, the support frames in this very building could begin to fail.
+Melion Bislcavret: Don't be dramatic. Step aside.
+Alix LeThéque: I am the last defense against catastrophic failure. Under no circumstances will you reach this control panel, sir. 
+Alix LeThéque: Turn back, or be cut down.
+Melion Bislcavret: (Ugh... again?)
+Melion Bislcavret: Fine then. If that's how it's got to be.
+Alix LeThéque: With the powers and duties vested in me by the office of integrated technology...
+Alix LeThéque: I challenge you, Melion Bislcavret!
 Alix LeThéque: En garde!
 <<set $lethequeStart = 1>>
 ===
@@ -467,11 +483,19 @@ title: LethequePostBattle
 LethequePostBattle
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1667,-13
+__PrivCrochet_position: 1660,-22
 __PrivCrochet_tags: 
 title: LethequeFledBattle
 ---
-LethequeFledBattle
+Alix LeThéque: Are you trying to run away? In this four square meter box?
+Alix LeThéque: There's nowhere to go! 
+The control panel is completely fortified behind LeThéque's stance.
+The only way to reach it is to break her posture, somehow.
+(Which means fighting... But it was worth a shot.)
+Melion Bislcavret: I guess I didn't think this one through.
+Alix LeThéque: I don't believe you've ever thought *anything* through, sir.
+Alix LeThéque: En garde!
+<<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 1819,424
@@ -479,4 +503,46 @@ __PrivCrochet_tags:
 title: LethequeRetry
 ---
 LethequeRetry
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2065,-130
+__PrivCrochet_tags: 
+title: Dancer
+---
+Dancer
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1724,659
+__PrivCrochet_tags: 
+title: Elevator2
+---
+Floor 2 Elevator placeholder text.
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2099,526
+__PrivCrochet_tags: 
+title: DeerGuy
+---
+DeerGuy
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2031,193
+__PrivCrochet_tags: 
+title: Caller
+---
+Caller
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1861,-201
+__PrivCrochet_tags: 
+title: Smoker
+---
+Smoker
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1632,-263
+__PrivCrochet_tags: 
+title: Keyboard
+---
+Empty Text
 ===

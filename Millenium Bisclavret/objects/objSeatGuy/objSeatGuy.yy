@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
   "%Name":"objSeatGuy",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"objSeatGuy",
   "overriddenProperties":[],
   "parent":{
-    "name":"npc",
-    "path":"folders/npc.yy",
+    "name":"F2",
+    "path":"folders/npc/F2.yy",
   },
   "parentObjectId":{
     "name":"npc_container",
@@ -26,9 +28,7 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v2","%Name":"node_name","filters":[],"listItems":[],"multiselect":false,"name":"node_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Gator","varType":2,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

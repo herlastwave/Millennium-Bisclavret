@@ -3,7 +3,7 @@
   "%Name":"smoker",
   "bboxMode":0,
   "bbox_bottom":628,
-  "bbox_left":0,
+  "bbox_left":28,
   "bbox_right":336,
   "bbox_top":3,
   "collisionKind":1,
