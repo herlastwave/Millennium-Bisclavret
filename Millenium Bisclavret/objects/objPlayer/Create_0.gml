@@ -5,6 +5,7 @@ decel = 0.5;
 
 global.reneeFought=false;
 global.lethequeFought=false;
+global.inBattle=false;
 
 // max horz speed
 max_hsp= 9;
@@ -29,8 +30,6 @@ currently_talking = noone;
 in_dialogue = false;
 in_cutscene = false;
 
-ChatterboxLoadFromFile("dialog.yarn");
-
 chatterbox = ChatterboxCreate("dialog.yarn");
 
 ChatterboxVariableDefault("gotBooklet", 0)
@@ -38,6 +37,10 @@ ChatterboxVariableDefault("reneeVisited", -1)
 ChatterboxVariableDefault("battleStart", 0);
 
 ChatterboxVariableDefault("lethequeStart", 0);
+ChatterboxVariableDefault("lethequeLeave", -1);
+
+ChatterboxVariableDefault("elevatorState", 0);
+
 is_colliding=false;
 
 drawing_options = false;

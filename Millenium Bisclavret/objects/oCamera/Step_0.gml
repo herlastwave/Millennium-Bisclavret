@@ -21,4 +21,6 @@ x+=(xTo - x)/5;
 x+=(yTo-y)/5;
 
 camera_set_view_pos(view_camera[0],x-(camWidth*0.5),y-(camHeight*0.5));
+global.cameraPosX=camera_get_view_x(view_camera[0])-50;
+global.cameraPosY=camera_get_view_y(view_camera[0])-50;
 

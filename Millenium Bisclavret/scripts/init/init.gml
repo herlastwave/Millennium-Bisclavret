@@ -1,1 +1,3 @@
 randomize();
+
+ChatterboxLoadFromFile("dialog.yarn");

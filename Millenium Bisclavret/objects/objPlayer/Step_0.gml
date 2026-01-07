@@ -1,13 +1,18 @@
 
+
 x += x_frac;         //Add the fraction back to your position
 x_frac = x % 1;        //Get the new fraction
 x_int = x - x_frac;    // Get the rounded position
 x = x_int;   
 
 
-if (ChatterboxIsStopped() && keyboard_check_pressed(vk_escape)) {
+if (ChatterboxIsStopped(chatterbox) && keyboard_check_pressed(vk_escape)) {
     in_dialogue=false;
 }
+
+
+
+
 
 // get inputs
 var _key_left = keyboard_check(vk_left);
@@ -63,8 +68,7 @@ if (place_meeting(x+hsp,y,barriers)) {
 // collide with solid npcs
 
 
-
-if (place_meeting(x+hsp,y,npc_container)) {
+if (place_meeting(x+hsp,y,npc_container) && global.inBattle=false) {
     var who_is_here = instance_place(x,y, npc_container);
 
     
@@ -227,7 +231,7 @@ if(keyboard_check_pressed(ord("Z")) || keyboard_check_pressed(vk_space)) {
 }
 */
 
-if (place_meeting(x+hsp,y,npc_container)) {
+if (place_meeting(x+hsp,y,npc_container) && global.inBattle=false) {
 
     var who_is_here = instance_place(x,y, npc_container);
     
@@ -297,7 +301,7 @@ if (ChatterboxVariableGet("battleStart")>0) {
 /*    var target = battle_screen;
     TransitionStart(target,sqNoOut, sqFadeIn);
     */
-
+    global.inBattle=true;
     NewEncounter([global.enemies.renee],battle_background);
     
 }
@@ -305,6 +309,7 @@ if (ChatterboxVariableGet("battleStart")>0) {
 if (ChatterboxVariableGet("lethequeStart")>0) {
     ChatterboxVariableReset("lethequeStart");
     global.lethequeFought=true;
+    global.inBattle=true;
     
 
 /*    var target = battle_screen;

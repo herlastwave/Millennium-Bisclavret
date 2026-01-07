@@ -179,10 +179,10 @@ global.enemies = {
     letheque: {
         name: "LeThéque",
         postBattleNode: "LethequePostBattle",
-        hp: 5,
-        hp_max: 5,
+        hp: 3,
+        hp_max: 3,
         isBlocking: false,
-        strength: 1,
+        strength: 2,
         sprites: {idle: battle_lethqeue},
         activeLine: "Le Active line.",
         passiveLine: "Le passive line.",

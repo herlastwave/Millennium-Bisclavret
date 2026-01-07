@@ -110,7 +110,11 @@ for (var i=0; i<array_length(enemyUnits); i++) {
     var empty_health_points=_char.hp_max-_char.hp;
     
     draw_set_colour(c_white) {
-        draw_rectangle(enemy_health_x-enemy_health_rect_halfwidth,enemy_health_y-50,enemy_health_x+enemy_health_rect_halfwidth,enemy_health_y+250, false);
+        draw_rectangle(enemy_health_x-enemy_health_rect_halfwidth
+            ,enemy_health_y-50
+            ,enemy_health_x+enemy_health_rect_halfwidth,
+            enemy_health_y*1.35*_char.hp_max, 
+            false);
     }
     
     repeat (empty_health_points) {   

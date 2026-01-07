@@ -8,7 +8,10 @@ function TransitionPlaceSequence(_type){
     }
         
     var _lay = layer_create(-9999,"transition");
-    layer_sequence_create(_lay,0,0,_type);
+    //layer_sequence_create(_lay,camera_get_view_x(view_camera[0])-50,camera_get_view_y(view_camera[0])-50,_type);
+    layer_sequence_create(_lay,camera_get_view_x(view_camera[0])-50,camera_get_view_y(view_camera[0])-50,_type);
+    //layer_sequence_create(_lay,objPlayer.x,objPlayer.y,_type);
+
 }
 
 //called when you want to go from one room to another w/ any combination of in or out sequences
@@ -31,6 +34,7 @@ function TransitionStart(_roomTarget, _typeOut, _typeIn) {
 
 function TransitionChangeRoom() {
     room_goto(global.roomTarget);
+    
 }
 
 // called at the moment at the end of an "in" transition seq.

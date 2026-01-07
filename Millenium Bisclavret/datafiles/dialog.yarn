@@ -59,7 +59,7 @@ Renée Allard: If I have to get my hands dirty to salvage that on my way out, so
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 8
-__PrivCrochet_position: 137,442
+__PrivCrochet_position: 136,440
 __PrivCrochet_tags: 
 title: Prologue
 ---
@@ -79,12 +79,12 @@ Melion Bisclavret: "This is he."
 "Great! This is Marie-Luce, I'm calling from Mr. Tweed's office."
 Marie-Luce: "Congratulations! You've been selected for a promotion to general manager."
 Melion Bisclavret: "G–"
-Marie-Luce: "If you could come up to sign a few papers to finalize the decision. You know, just protocol."
+Marie-Luce: "If you could come up to sign a few papers to finalize the decision. You know, standard protocol."
 -> Of course!
     Melion Bisclavret: "Right, of course."
 -> Not yet...
     Melion Bisclavret: "I need time to think about it."
-Marie-Luce: "Well, be quick about it please. Mr. Tweed is a very busy man."
+Marie-Luce: "Well, be quick about it please! Mr. Tweed is a very busy man."
 Melion Bisclavret: "Understood. I'll be there promptly."
 Marie-Luce: "But if you'd like to celebrate a little with your co-workers on the way up, I won't stop you.
 Marie-Luce: "I'm sure everyone'll want to congratulate you on the big accomplishment!"
@@ -100,7 +100,7 @@ Melion Bisclavret: "I'll be right there. Goodbye."
 <<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 392,392
+__PrivCrochet_position: 390,390
 __PrivCrochet_tags: 
 title: Safety
 ---
@@ -333,8 +333,7 @@ title: ReneePostBattle
         <<set $knowsLeTheque=1>>
         Melion Bisclavret: Oh. I never got the name.
         Renée Allard: Hm. You never thought to ask? That's just like you, isn't it? 
-        Renée Allard: You use people up. And you don't care, 
-        Renée Allard: because you don't even notice.
+        Renée Allard: You use people up. And you don't care because you don't even notice.
     -> You're helping me?
         Melion Bisclavret: Wait a moment. *Now* you want to help me...?
         Renée Allard: I don't want anything, Bisclavret. I'm just frustrated. Frustrated and exhausted.
@@ -388,18 +387,20 @@ Somehow, Bisclavret gathers himself up and draws his sword once more.
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1388,318
+__PrivCrochet_position: 1387,317
 __PrivCrochet_tags: 
 title: Elevator
 ---
+<<if $elevatorState==0>>
 The Elevator: Going up?
 -> Yup.
     <<set $elevatorState=1>>
 -> Nope.
     Melion Bisclavret: Not yet.
+<<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1413,531
+__PrivCrochet_position: 1411,530
 __PrivCrochet_tags: 
 title: LeThequePreBattle
 ---
@@ -476,11 +477,18 @@ Alix LeThéque: En garde!
 <<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1793,165
+__PrivCrochet_position: 1664,211
 __PrivCrochet_tags: 
 title: LethequePostBattle
 ---
-LethequePostBattle
+<<if $lethequeLeave==-1>>
+    LethequePostBattle
+    ooo
+    <<set $lethequeLeave =0>>
+<<elseif $lethequeLeave==0>>
+    sa.kflsdfj
+    <<set $lethequeLeave=1>>
+<<endif>>
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 1660,-22
@@ -491,46 +499,154 @@ Alix LeThéque: Are you trying to run away? In this four square meter box?
 Alix LeThéque: There's nowhere to go! 
 The control panel is completely fortified behind LeThéque's stance.
 The only way to reach it is to break her posture, somehow.
-(Which means fighting... But it was worth a shot.)
+(Which means fighting... Well, it was worth a shot anyways.)
 Melion Bislcavret: I guess I didn't think this one through.
 Alix LeThéque: I don't believe you've ever thought *anything* through, sir.
 Alix LeThéque: En garde!
 <<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1819,424
+__PrivCrochet_position: 1720,424
 __PrivCrochet_tags: 
 title: LethequeRetry
 ---
 LethequeRetry
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2065,-130
+__PrivCrochet_position: 2064,-131
 __PrivCrochet_tags: 
 title: Dancer
 ---
-Dancer
+<<declare $dancerVisited=0>>
+<<if $dancerVisited==0>>
+    The Receptionist: Hi! Welcome to the executive suite!!
+    Melion Bisclavret: Good morning.
+    The Receptionist: You must be Mr. Bisclavret, we spoke earlier on the phone! I'm Marie-Luce!!
+    Melion Bisclavret: You seemed less, uh, animated on the phone.
+    Marie-Luce: I hadn't had my coffee yet!
+    Marie-Luce: 'I'm not me before I've had my coffee'!!
+    Melion Bisclavret: Me either.
+    Marie-Luce: Let me know if you have any questions about the suite! Or anything else! 
+    <<set $dancerVisited=1>>
+<<elseif $dancerVisited==1>>
+    Marie-Luce: Mr. Bisclavret, did you have any questions about the executive suite!? 
+    -> The boss's office...
+        Melion Bisclavret: Where is Tweed's office?
+        Marie-Luce: Just down the hall! You can't miss it!!
+        Marie-Luce: 
+    -> Gaurin...
+        Melion Bisclavret: You mentioned Gaurin on the phone. 
+        Marie-Luce: Ha ha! You know him, right? What a character! 
+        Melion Bisclavret: We've met. 
+        Melion Bisclavret: ...He isn't still here, is he?
+        Marie-Luce: Mmmmmmmmm, maybe? He's probably in Mr. Tweed's office. 
+        Marie-Luce: You know, being his assistant and all.
+        Melion Bisclavret: Hooray. No way around it, then.
+        Marie-Luce: Say hi to him for me, please!!
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1724,659
+__PrivCrochet_position: 1721,655
 __PrivCrochet_tags: 
 title: Elevator2
 ---
-Floor 2 Elevator placeholder text.
+<< declare $elevatorfloor2visted=0>>
+<<if $elevatorfloor2visted==0>>
+    Bisclavret peeks back through the elevator doors.
+    LeThéque is fidgeting with her pager. It looks like she's trying to send a message to someone.
+    -> Confront.
+        Melion Bislcavret: What are you doing?
+        Alix LeThéque: AAAAAAAAAGH!!
+        Alix LeThéque: Why are you still here? I thought you left!
+        Melion Bislcavret: Nope. Still here.
+        Alix LeThéque: What does it look like I'm doing?
+        Melion Bislcavret: I don't know, that's why I'm asking. 
+        Alix LeThéque: Well, it's none of your business!
+        -> Persist.
+            Melion Bislcavret: ...
+            Bislcavret hears LeThéque muttering under her breath as she punches codes into the tiny device on her hip.
+            Alix LeThéque: (10... 33...)
+            Alix LeThéque: (A... 10... 7... L... 10... 7...)
+            Alix LeThéque: (B... 10... 17... 10... 33...)
+            <<set $elevatorfloor2visted=1>>
+        -> Do not.
+    -> Do not.
+    Melion Bislcavret: I've got better things to do.
+    Alix LeThéque: ??????
+    Alix LeThéque: You're still here!?
+    Melion Bislcavret: No.
+<<elseif $elevatorfloor2visted==1>>
+    Melion Bislcavret: I've got better things to do.
+    Alix LeThéque: ???
+    Alix LeThéque: You're still here?
+    Melion Bislcavret: No.
+<<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2099,526
+__PrivCrochet_position: 2097,525
 __PrivCrochet_tags: 
 title: DeerGuy
 ---
-DeerGuy
+The Boss's Secretary: Melion Bisclavret?
+Melion Bisclavret: Reporting for duty. 
+The Boss's Secretary: You're late. 
+
+The Boss's Secretary: 
+The Boss's Secretary: The boss is waiting for you just down the hall.
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2031,193
+__PrivCrochet_position: 2028,190
 __PrivCrochet_tags: 
 title: Caller
 ---
-Caller
+<<declare $telephonerVisited=0>>
+<<if $telephonerVisited==0>>
+    Telephoner: Hello!
+    Melion Bisclavret: Good morning.
+    Telephoner: Hello?
+    Melion Bisclavret: Uh, hi.
+    Telephoner: Hello? Hello!?
+    Melion Bisclavret: Um. Are you–
+    Telephoner: Oh, I'm sorry. I'm on the phone, you see.
+    Melion Bisclavret: Uh huh. Why are out you in the hallway?
+    Telephoner: The reception in my office is terrible. I always take calls out here.
+    Melion Bisclavret: On a landline?
+    Melion Bisclavret: Well, don't let me disturb you.
+    Telephoner: It's no matter. The line is dead, anyway.
+    Melion Bisclavret: Weird.
+    Telephoner: I know, right? It happened just as you were walking over.
+    Telephoner: The voice got all garbled up and suddenly cut out... just like in my office.
+    -> Sounds spooky.
+        Melion Bisclavret: Creepy stuff. I wonder why.
+        Telephoner: Me too. I'm not superstitious though, I think it's something electrical. Something in the wiring.
+    -> Sounds stupid.
+        Melion Bisclavret: Probably a coincidence. 
+        Telephoner: I'm not so sure. I think its some kind of electrical interference. 
+        Telephoner: Have you ever been talking on the cordless while using the microwave? 
+        Melion Bisclavret: I don't own a microwave.
+        Telephoner: Really? They're awfully convenient. How do you manage without one?
+        Melion Bisclavret: I'm on a raw-food diet.
+    Telephoner: I've submitted dozens of service requests, but IT hasn't been able to fix it.
+    Telephoner: They said something about 'anomalous interference' coming from one of the lower floors.
+    Telephoner: You're the new promotee from down there, right? Bisclavret?
+    Melion Bisclavret: At your service.
+    Telephoner: Do you know anything about the anomaly down there?
+    -> Of course.
+        Melion Bisclavret: The science of probability means nothing, down there.
+        Melion Bisclavret: Flip a coin a dozen times and you'll see a dozen tails.
+        Melion Bisclavret: A single man can be 'randomly selected' sixteen weeks in a row.
+        Telephoner: Nothing about technology, though?
+    -> Not really.
+        Melion Bisclavret: Nope. Everything is perfectly normal.
+        Telephoner: Nothing at all?
+    Melion Bisclavret: Well, our printer doesn't work anymore.
+    Telephoner: That's not much of an anomaly.
+    Telephoner: Anyway, I asked one of the IT people about my phone problem when she walked past earlier today...
+    Telephoner: She shook her head and said she was on her way to deal with it 'for good',
+    Telephoner: but clearly, it isn't fixed!
+    Melion Bisclavret: That's IT for you. Lazy bastards.
+    <<set $telephonerVisited=1>>
+<<elseif $telephonerVisited==1>>
+Melion Bisclavret: ...
 ===
 __PrivCrochet_colorID: 0
 __PrivCrochet_position: 1861,-201
@@ -540,9 +656,44 @@ title: Smoker
 Smoker
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1632,-263
+__PrivCrochet_position: 1630,-265
 __PrivCrochet_tags: 
 title: Keyboard
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1142,597
+__PrivCrochet_tags: 
+title: ExecDoor
+---
+<<set $execDoorState=1>>
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2429,104
+__PrivCrochet_tags: 
+title: Gaurin
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2442,351
+__PrivCrochet_tags: 
+title: GaurinFled
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2696,88
+__PrivCrochet_tags: 
+title: GaurinPost
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2718,352
+__PrivCrochet_tags: 
+title: GaurinDefeat
 ---
 Empty Text
 ===

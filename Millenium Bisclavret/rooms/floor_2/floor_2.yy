@@ -7,12 +7,13 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_1900A47","path":"rooms/floor_2/floor_2.yy",},
-    {"name":"inst_5502704B","path":"rooms/floor_2/floor_2.yy",},
     {"name":"inst_7F0F72B2","path":"rooms/floor_2/floor_2.yy",},
     {"name":"inst_5A062114","path":"rooms/floor_2/floor_2.yy",},
     {"name":"inst_504A110F","path":"rooms/floor_2/floor_2.yy",},
     {"name":"inst_9779D9B","path":"rooms/floor_2/floor_2.yy",},
     {"name":"inst_518AB767","path":"rooms/floor_2/floor_2.yy",},
+    {"name":"inst_7F802F29","path":"rooms/floor_2/floor_2.yy",},
+    {"name":"inst_5502704B","path":"rooms/floor_2/floor_2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -20,7 +21,7 @@
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_5EF2C067","animationSpeed":1.0,"colour":4278190080,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_5EF2C067","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"plant2","path":"sprites/plant2/plant2.yy",},"x":3384.0,"y":463.0,},
       ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"ldalskjd","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_518AB767","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_518AB767","objectId":{"name":"objSmoker","path":"objects/objSmoker/objSmoker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.8,"scaleY":0.8,"x":249.0,"y":518.0,},
+        {"$GMRInstance":"v4","%Name":"inst_518AB767","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_518AB767","objectId":{"name":"objSmoker","path":"objects/objSmoker/objSmoker.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.8,"scaleY":0.8,"x":320.0,"y":522.0,},
       ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"player","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_1900A47","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1900A47","objectId":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.8,"scaleY":0.8,"x":2896.0,"y":549.0,},
@@ -32,6 +33,7 @@
         {"$GMRInstance":"v4","%Name":"inst_5A062114","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5A062114","objectId":{"name":"objDancer","path":"objects/objDancer/objDancer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.75,"scaleY":0.75,"x":2234.0,"y":474.0,},
         {"$GMRInstance":"v4","%Name":"inst_504A110F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_504A110F","objectId":{"name":"elevator2","path":"objects/elevator2/elevator2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":3009.0,"y":525.0,},
         {"$GMRInstance":"v4","%Name":"inst_9779D9B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_9779D9B","objectId":{"name":"objCaller","path":"objects/objCaller/objCaller.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.65,"scaleY":0.65,"x":1183.0,"y":499.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7F802F29","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7F802F29","objectId":{"name":"execdoor_outer","path":"objects/execdoor_outer/execdoor_outer.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":890.0,"y":525.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"v1","%Name":"graphic_2275D737","animationSpeed":1.0,"colour":4278190080,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2275D737","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"plant1","path":"sprites/plant1/plant1.yy",},"x":342.0,"y":346.0,},

@@ -10,8 +10,8 @@
   "name":"elevator2",
   "overriddenProperties":[],
   "parent":{
-    "name":"npc",
-    "path":"folders/npc.yy",
+    "name":"F2",
+    "path":"folders/npc/F2.yy",
   },
   "parentObjectId":{
     "name":"npc_container",

@@ -5,4 +5,3 @@ defeated = false;
 
 
 node_name="LeThequePreBattle";
-

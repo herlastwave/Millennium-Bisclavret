@@ -1,5 +1,9 @@
+
+
+
 draw_set_font(typeyReg);
 draw_set_valign(fa_top);
+draw_set_alpha(1);
 
 
 var x1= 0;

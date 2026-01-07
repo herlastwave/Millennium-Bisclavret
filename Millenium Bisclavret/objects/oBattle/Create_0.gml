@@ -1,6 +1,6 @@
 window_set_size(1440, 900);
 
-instance_deactivate_all(true);
+global.inBattle=true;
 
 units = [];
 turn=0;
@@ -246,8 +246,8 @@ function BattleStateVictoryCheck() {
          for (var i=0; i<array_length(global.player); i++) {
             global.player[0].hp = playerUnits[0].hp_max;
         }
-        
-        instance_activate_all();
+        global.inBattle=false;
+   //     instance_activate_all();
         //somehow tell chatterbox to switch to node
         
         //this obviously needs to change when more battles are implemented
@@ -259,6 +259,7 @@ function BattleStateVictoryCheck() {
         if (global.lethequeFought==true && instance_exists(objLetheque)) {
             objLetheque.node_name="LethequeRetry";
             objLetheque.is_fightable="true";
+             objLetheque.is_collidable="true";
         }
         
         //update to include other fighters
@@ -271,19 +272,21 @@ function BattleStateVictoryCheck() {
         for (var i=0; i<array_length(global.player); i++) {
             global.player[0].hp = playerUnits[0].hp_max;
         }
+        global.inBattle=false;
         
-        instance_activate_all();
+     //   instance_activate_all();
         //somehow tell chatterbox to switch to node
         
         //this obviously needs to change when more battles are implemented
         if (global.reneeFought==true && instance_exists(objRene)) {
             objRene.node_name="ReneePostBattle";
-            objRene.is_fightable="false";
+            objRene.is_fightable="true";
         }
         
         if (global.lethequeFought==true && instance_exists(objLetheque)) {
             objLetheque.node_name="LethequePostBattle";
-            objLetheque.is_fightable="false";
+            objLetheque.is_fightable="true";
+             objLetheque.is_collidable="true";
         }
         
         //update to include other fighters
@@ -295,8 +298,8 @@ function BattleStateVictoryCheck() {
     
     if (fleeing==true) {
         global.player[0].hp = playerUnits[0].hp;
-        
-        instance_activate_all();
+        global.inBattle=false;
+      //  instance_activate_all();
         
         if (global.reneeFought==true && instance_exists(objRene)) {
             global.enemies.renee.hp = enemyUnits[0].hp;
@@ -308,6 +311,8 @@ function BattleStateVictoryCheck() {
             global.enemies.letheque.hp = enemyUnits[0].hp;
             objLetheque.node_name="LethequeFledBattle";
             objLetheque.is_fightable="true";
+            objLetheque.is_collidable="true";
+            
         }
         
         instance_destroy();
