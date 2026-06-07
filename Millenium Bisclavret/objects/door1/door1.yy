@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"objLetheque",
+  "%Name":"door1",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"objLetheque",
+  "name":"door1",
   "overriddenProperties":[],
   "parent":{
     "name":"npc",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"letheque",
-    "path":"sprites/letheque/letheque.yy",
+    "name":"saftey_guy",
+    "path":"sprites/saftey_guy/saftey_guy.yy",
   },
   "spriteMaskId":null,
   "visible":true,

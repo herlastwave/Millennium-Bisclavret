@@ -1,12 +1,13 @@
 
-
+/*
 var x1= 0;
-var y1= window_get_height() - 200;
+var y1w= window_get_height()*(7/9);
+var y1 = 0;
 var x2 = window_get_width();
 var y2 = window_get_height();
 
 draw_set_color(c_white);
-draw_rectangle(x1, y1, x2, y2, false);
+draw_rectangle(x1, y1w, x2, y2, false);
 
 //temporary UI to be replaced with mine
 //positions
@@ -19,11 +20,37 @@ draw_set_font(typeyReg);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
+ * */
 
-draw_text(COLUMN_ENEMY, y1+20, "ENEMY");
-draw_text(COLUMN_NAME, y1+20, "NAME");
-draw_text(COLUMN_HP, y1+20, "HP");
+display_set_gui_size(1440,900);
 
+draw_set_font(typeyReg);
+draw_set_valign(fa_top);
+draw_set_alpha(1);
+
+
+var x1= 0;
+var y1= display_get_gui_height()*0.8;
+var x2 = display_get_gui_width();
+var y2 = display_get_gui_height();
+
+draw_set_color(c_white);
+draw_set_alpha(1)
+draw_rectangle(x1, y1, x2, y2, false);
+
+draw_set_color(c_black);
+
+var name_x = x2*0.2;
+var name_y = y2*0.85;
+    
+var text_x = x2*0.23;
+var text_y = y2*0.85;
+
+var cutoff_x=x2*0.7;
+
+draw_set_color(c_black);
+
+/*
 //draw enemy names
 draw_set_font(typeyItalic);
 draw_set_halign(fa_left);
@@ -68,17 +95,17 @@ for (var i=0; i<array_length(playerUnits); i++) {
     }
     draw_text(COLUMN_HP, y1+50+(i*50),string(_char.hp)+"/"+string(_char.hp_max));
 }
-
+*/
 //draw hp bubbles
-var player_health_x = 180;
-var player_health_y = 110;
-var health_spr_scale=0.22;
-var health_spr_spacing=80;
+var player_health_x = 0.11*x2;
+var player_health_y = 0.07*y2;
+var health_spr_scale=1;
+var health_spr_spacing=0.08*y2;
 
-var enemy_health_x = window_get_width()-150;
-var enemy_health_y = 50;
-var enemy_health_spr_scale=0.15;
-var enemy_health_spr_spacing=55;
+var enemy_health_x = 0.9*x2;
+var enemy_health_y = 0.0556*y2;
+var enemy_health_spr_scale=0.66;
+var enemy_health_spr_spacing=0.05*y2;
 var enemy_health_rect_halfwidth=30;
 
 //draw player hp bubbles
@@ -87,19 +114,24 @@ for (var i=0; i<array_length(playerUnits); i++) {
     var full_health_points=_char.hp;
     var empty_health_points=_char.hp_max-_char.hp;
     
-    draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1);
+    //draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1);
+    draw_sprite(health_karat,-1,player_health_x,player_health_y);
     player_health_y += health_spr_spacing;
     
     repeat (empty_health_points) {   
-        draw_sprite_ext(hit_point_empty, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
+        //draw_sprite_ext(hit_point_empty, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
+        draw_sprite(hit_point_empty, -1,player_health_x,player_health_y);
         player_health_y+=health_spr_spacing;
     }
     
     repeat (full_health_points) {   
-        draw_sprite_ext(hit_point_full, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
+        
+        //draw_sprite_ext(hit_point_full, -1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,0,c_white,1)
+        draw_sprite(hit_point_full, -1,player_health_x,player_health_y);
         player_health_y+=health_spr_spacing;
     }
-    draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,health_spr_scale,health_spr_scale,180,c_white,1);
+    player_health_y+=health_spr_spacing;
+    draw_sprite_ext(health_karat,-1,player_health_x,player_health_y,1,-1,0,c_white,1);
 }
 
 //draw enemy hp bubbles
@@ -109,13 +141,17 @@ for (var i=0; i<array_length(enemyUnits); i++) {
     var full_health_points=_char.hp;
     var empty_health_points=_char.hp_max-_char.hp;
     
-    draw_set_colour(c_white) {
-        draw_rectangle(enemy_health_x-enemy_health_rect_halfwidth
-            ,enemy_health_y-50
+    /*draw_set_colour(c_white) {
+        draw_rectangle(enemy_health_x
+            ,enemy_health_y
             ,enemy_health_x+enemy_health_rect_halfwidth,
             enemy_health_y*1.35*_char.hp_max, 
             false);
     }
+     * */
+    draw_set_colour(c_black);
+    draw_sprite_ext(health_karat,-1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1);
+    enemy_health_y+=enemy_health_spr_spacing;
     
     repeat (empty_health_points) {   
         draw_sprite_ext(hit_point_empty, -1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1)
@@ -126,11 +162,12 @@ for (var i=0; i<array_length(enemyUnits); i++) {
         draw_sprite_ext(hit_point_full, -1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,0,c_white,1)
         enemy_health_y+=enemy_health_spr_spacing;
     }
-    draw_sprite_ext(health_karat,-1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,enemy_health_spr_scale,180,c_white,1);
+    enemy_health_y+=enemy_health_spr_spacing;
+    draw_sprite_ext(health_karat,-1,enemy_health_x,enemy_health_y,enemy_health_spr_scale,-1*enemy_health_spr_scale,0,c_white,1);
 }
 
 draw_set_font(typeyReg);
-
+/*
 var rect_x1= 0;
 var rect_y1= window_get_height() - 200;
 var rect_x2 = window_get_width();
@@ -145,9 +182,10 @@ var name_y = y1 + 50;
 var text_x = x1 + 340;
 var text_y = y1 + 50;
 
+*
 draw_set_color(c_black);
 
-/*
+
 if (current_name="") {
     draw_set_halign(fa_left)
     draw_set_font(typeyReg);
@@ -159,12 +197,12 @@ if (current_name="") {
     /*draw_set_halign(fa_right)
     draw_set_font(typeyItalic);
     draw_text_ext_colour(name_x, name_y, current_name, -1, 250, c_black, c_black, c_black, c_black, 1);
-    draw_text_ext_colour(name_x+35, name_y, "–", -1, 200, c_black, c_black, c_black, c_black, 1); */
-    draw_set_font(typeyReg);
+    draw_text_ext_colour(name_x+35, name_y, "–", -1, 200, c_black, c_black, c_black, c_black, 1); 
+    */draw_set_font(typeyReg);
     draw_set_halign(fa_left)
-    draw_text_ext_colour(text_x, text_y, string_copy("\""+battleText+"\"", 1, current_text_index), -1, window_get_width()-450, c_black, c_black, c_black, c_black, 1);
+    draw_text_ext_colour(text_x, text_y, string_copy("\""+battleText+"\"", 1, current_text_index), -1, cutoff_x, c_black, c_black, c_black, c_black, 1);
     current_text_index++;
-//}
+//} */
 
 
 //draw main menu - from old code

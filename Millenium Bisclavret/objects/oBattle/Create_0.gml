@@ -1,4 +1,3 @@
-window_set_size(1440, 900);
 
 global.inBattle=true;
 

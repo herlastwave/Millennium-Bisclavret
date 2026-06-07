@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"windowScale",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"windowScale",
+  "parent":{
+    "name":"scripts",
+    "path":"folders/scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

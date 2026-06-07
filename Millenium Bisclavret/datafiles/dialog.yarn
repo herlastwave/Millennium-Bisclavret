@@ -1,15 +1,21 @@
 #__PrivCrochet_version:1
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 444,150
+__PrivCrochet_position: 438,-334
 __PrivCrochet_tags: 
-title: Start
+title: Door
 ---
-Safety Guy: Oh, hey Mel. B.
-Melion Bisclavret: I don't have time for this.
-Safety guy: Don't be so cold.
+Bisclavret presses on the handle and presses on door to the stairway.
+Melion Bisclavret: Grrnt.
+Oh? it's jammed shut. 
+Melion Bisclavret: Stupid thing.
+-> Shove it, door.
+    Bisclavret shoves on the panel again, to no avail. It seems the door is blocked from the inside.
+    -> Peek inside.
+-> Peek inside.
+It is difficult to make out much of anything through the frosted glass panel...
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 694,27
+__PrivCrochet_position: 694,-453
 __PrivCrochet_tags: 
 title: Renee
 ---
@@ -36,7 +42,7 @@ Renée Allard: Face it, Bisclavret. *Someone* is trying to drag this place kicki
 <<jump Renee_Challenge_Init>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 986,45
+__PrivCrochet_position: 986,-435
 __PrivCrochet_tags: 
 title: Renee_Challenge_Init
 ---
@@ -59,7 +65,7 @@ Renée Allard: If I have to get my hands dirty to salvage that on my way out, so
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 8
-__PrivCrochet_position: 136,440
+__PrivCrochet_position: 135,-41
 __PrivCrochet_tags: 
 title: Prologue
 ---
@@ -68,31 +74,36 @@ title: Prologue
 Once upon a time,
 Back when foxes played polo,
 And tigers used to smoke tobacco,
-(Or wait, don't they still do that?)
+(Or wait, they still do that, don't they?)
 There was a man named Melion.
 Melion was a faithful servant to his lord.
-He toiled each day in his lord's service.
+He toiled thanklessly day after day in his lord's service.
 His was a meager existence without recognition.
-But one day, he recieved a message from above.
-"Hey! Is this um... Melion Bisclavret?"
+But one day... 
+He received a message from above.
+*Brrring*
+*Brrring*
+"Hi! Is this um... Melion Bisclavret?"
 Melion Bisclavret: "This is he."
 "Great! This is Marie-Luce, I'm calling from Mr. Tweed's office."
 Marie-Luce: "Congratulations! You've been selected for a promotion to general manager."
-Melion Bisclavret: "G–"
-Marie-Luce: "If you could come up to sign a few papers to finalize the decision. You know, standard protocol."
+Melion Bisclavret: "Huh?"
+Marie-Luce: "If you could come up to sign a few papers to finalize the decision as you can."
+Marie-Luce: "You know, standard protocol and all that."
 -> Of course!
     Melion Bisclavret: "Right, of course."
+    Melion Bisclavret: "I'll be there promptly."
 -> Not yet...
     Melion Bisclavret: "I need time to think about it."
-Marie-Luce: "Well, be quick about it please! Mr. Tweed is a very busy man."
-Melion Bisclavret: "Understood. I'll be there promptly."
-Marie-Luce: "But if you'd like to celebrate a little with your co-workers on the way up, I won't stop you.
-Marie-Luce: "I'm sure everyone'll want to congratulate you on the big accomplishment!"
+    Marie-Luce: "Well, be quick about it please! Mr. Tweed is a very busy man."
+    Melion Bisclavret: "Understood. I'll be there promptly."
+Marie-Luce: "But if you'd like to celebrate a little on the way up, I won't stop you.
+Marie-Luce: "I'm sure all your co-workers will want to congratulate you on the big accomplishment!"
 -> Absolutely.
     Melion Bisclavret: "Sure, but am I not the first to hear of this?"
 -> Absolutely not.
     Melion Bisclavret: "Uh... right. But you're saying I'm not the first to hear of this?"
-Marie-Luce: "Well, not exactly. Gaurin found out and he's a bit of a gossip."
+Marie-Luce: "Well, not exactly. Gaurin from up here found out, and he's a bit of a gossip."
 Melion Bisclavret:"Gaurin!?"
 Marie-Luce: "Ha ha, you know him? He's–"
 Melion Bisclavret: "I'll be right there. Goodbye."
@@ -100,7 +111,7 @@ Melion Bisclavret: "I'll be right there. Goodbye."
 <<set $sceneEnd=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 390,390
+__PrivCrochet_position: 389,-91
 __PrivCrochet_tags: 
 title: Safety
 ---
@@ -130,8 +141,24 @@ title: Safety
     -> No.
         Melion Bisclavret: No.
     SHC Officer: Too bad. 'S mandatory.  
-    SHC Officer: If you find yourself in a duel with a fellow employee, try to resolve the situation through dialogue. It might not always work out the way you expect, though.
-    SHC Officer: Getting into the headspace of your opponent can give you hints about their next move. If they seem focused on you, it could mean an attack is imminent.
+    SHC Officer: If you find yourself in a duel with a fellow employee–
+    -> I know this already.
+        SHC Officer: Of course, it was in the mandatory training module this year!
+        Melion Bisclavret: Yup. Mhm.
+        SHC Officer: But I have to go over it again regardless, Mel. B. 'S protocol.
+        SHC Officer: Anyway,
+    -> What?
+        Melion Bisclavret: Duel?
+        SHC Officer: It's been in the yearly mandatory training module from the beginning, Mel. B.
+        SHC Officer: Don't tell me you've been blowing them off...
+        Melion Bisclavret: Um. 
+        Melion Bisclavret: My computer was broken.
+        SHC Officer: Well, normally I'd have to write you up for this...
+        SHC Officer: But because we're friends, I'll let you off the hook this time.
+        Melion Bisclavret: Thanks, 'friend'.
+        SHC Officer: Anyway,
+    SHC Officer: Getting into the headspace of your opponent can give you hints about their next move. 
+    SHC Officer: If they seem focused on you, it could mean an attack is imminent.
     SHC Officer: In that case, ready yourself and prepare to block. But if they seem distracted, take it as a sign to strike.
     SHC Officer: Hypothetically speaking, of course. You should always resolve conflicts non-violently.
     SHC Officer: Anyway, it looks like your sword is up to code. I'll get out of your way now.
@@ -165,7 +192,7 @@ title: Safety
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 395,644
+__PrivCrochet_position: 395,164
 __PrivCrochet_tags: 
 title: Gator
 ---
@@ -226,7 +253,7 @@ title: Gator
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 695,565
+__PrivCrochet_position: 694,84
 __PrivCrochet_tags: 
 title: Thrower
 ---
@@ -278,7 +305,7 @@ title: Thrower
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 706,296
+__PrivCrochet_position: 706,-184
 __PrivCrochet_tags: 
 title: Dandy
 ---
@@ -313,7 +340,7 @@ title: Dandy
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 971,280
+__PrivCrochet_position: 971,-200
 __PrivCrochet_tags: 
 title: ReneePostBattle
 ---
@@ -351,7 +378,7 @@ title: ReneePostBattle
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1010,-173
+__PrivCrochet_position: 1010,-653
 __PrivCrochet_tags: 
 title: ReneeFledBattle
 ---
@@ -372,7 +399,7 @@ Renée Allard: Enough. We have a score to settle.
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1294,-41
+__PrivCrochet_position: 1294,-521
 __PrivCrochet_tags: 
 title: ReneeRetry
 ---
@@ -387,7 +414,7 @@ Somehow, Bisclavret gathers himself up and draws his sword once more.
 <<set $battleStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1387,317
+__PrivCrochet_position: 1387,-163
 __PrivCrochet_tags: 
 title: Elevator
 ---
@@ -400,7 +427,7 @@ The Elevator: Going up?
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1411,530
+__PrivCrochet_position: 1410,49
 __PrivCrochet_tags: 
 title: LeThequePreBattle
 ---
@@ -477,21 +504,33 @@ Alix LeThéque: En garde!
 <<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1664,211
+__PrivCrochet_position: 1663,-269
 __PrivCrochet_tags: 
 title: LethequePostBattle
 ---
 <<if $lethequeLeave==-1>>
-    LethequePostBattle
-    ooo
-    <<set $lethequeLeave =0>>
-<<elseif $lethequeLeave==0>>
-    sa.kflsdfj
+    Melion Bislcavret: Satisfied? Now get out of my way.
+    Alix LeThéque: Urk. 
+    Bisclavret shoves the exhausted LeThéque aside and smashes his palm into the button labeled 'EXEC'.
+    The elevator doors close.
+    <<set $lethequeLeave = 0>>
+    *Hmmmmmmm*
+    Melion Bislcavret: So uh.
+    Melion Bislcavret: Sorry. It wasn't personal.
+    Alix LeThéque: *Grunt* 
+    Alix LeThéque: It was.
+    Melion Bislcavret: Um.
+    Melion Bislcavret: ...
+    *Hmmmmmmm*
+    The elevator doors open.
+    <<set $lethequeLeave=2>>
+    The elevator: Going out?
+    -> Absolutely.
     <<set $lethequeLeave=1>>
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1660,-22
+__PrivCrochet_position: 1660,-502
 __PrivCrochet_tags: 
 title: LethequeFledBattle
 ---
@@ -506,14 +545,16 @@ Alix LeThéque: En garde!
 <<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1720,424
+__PrivCrochet_position: 1720,-56
 __PrivCrochet_tags: 
 title: LethequeRetry
 ---
-LethequeRetry
+Alix LeThéque: 
+Melion Bislcavret: I guess I didn't think this one through.
+<<set $lethequeStart = 1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2064,-131
+__PrivCrochet_position: 2064,-611
 __PrivCrochet_tags: 
 title: Dancer
 ---
@@ -525,7 +566,19 @@ title: Dancer
     Melion Bisclavret: You seemed less, uh, animated on the phone.
     Marie-Luce: I hadn't had my coffee yet!
     Marie-Luce: 'I'm not me before I've had my coffee'!!
-    Melion Bisclavret: Me either.
+    Melion Bisclavret: Me either. How do I get to Tweed's office?
+    
+    Marie-Luce: Oh! It's just down the hall. 
+    Marie-Luce: Let me just buzz you in. 
+    Marie picks up the reciever on her desk and punches in a few digits at a time. She stops and looks down. Oh! There we go. She must have remembered more. Or...
+    There's *more*? It's taking quite a while...
+    Bisclavret leans over the desk and spots a chain of pink sticky note with a list of three-letter acryonyms followed several long strings of numbers.
+    It looks like Marie-Luce is typing in the code for 'R-U-E'.
+    Melion Bisclavret: Quite the phone number.
+    Marie-Luce: Right!? They're so long! I'm still not used the new ones.
+    Marie-Luce: That string-bean from IT scrambled them all last month! The old ones were soooo much easier. 
+
+
     Marie-Luce: Let me know if you have any questions about the suite! Or anything else! 
     <<set $dancerVisited=1>>
 <<elseif $dancerVisited==1>>
@@ -545,7 +598,7 @@ title: Dancer
         Marie-Luce: Say hi to him for me, please!!
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1721,655
+__PrivCrochet_position: 1721,175
 __PrivCrochet_tags: 
 title: Elevator2
 ---
@@ -582,19 +635,14 @@ title: Elevator2
 <<endif>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2097,525
+__PrivCrochet_position: 2097,45
 __PrivCrochet_tags: 
 title: DeerGuy
 ---
-The Boss's Secretary: Melion Bisclavret?
-Melion Bisclavret: Reporting for duty. 
-The Boss's Secretary: You're late. 
-
-The Boss's Secretary: 
-The Boss's Secretary: The boss is waiting for you just down the hall.
+[gaurin doesnt want him to speak to melion]
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2028,190
+__PrivCrochet_position: 2028,-290
 __PrivCrochet_tags: 
 title: Caller
 ---
@@ -649,51 +697,112 @@ title: Caller
 Melion Bisclavret: ...
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1861,-201
+__PrivCrochet_position: 1859,-684
 __PrivCrochet_tags: 
 title: Smoker
 ---
-Smoker
+Empty Text
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1630,-265
+__PrivCrochet_position: 1630,-745
 __PrivCrochet_tags: 
 title: Keyboard
 ---
 Empty Text
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 1142,597
+__PrivCrochet_position: 1142,117
 __PrivCrochet_tags: 
 title: ExecDoor
 ---
 <<set $execDoorState=1>>
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2429,104
+__PrivCrochet_position: 2429,-376
 __PrivCrochet_tags: 
 title: Gaurin
 ---
-Empty Text
+[gaurin's dialogue is in old timey pseudo-19th century verse. use words like talk'd and look'd]
+
+[guarin confronts melion with his hertiage as the descendant of legendary amoisee swordfighter ysengrim]
+[so why would he leave the high senavolshic historical reenactment and combat society. which is NOT larping because larp is role play and senvolshic chivalry is real]
+[bisclavret asks if hes back in his geneology phase, he learned about all this when his cousin pulled him into a mormonish scam]
+[gaurin retorts that only the finances were a scam, and the research was legit. it wasnt unsubstatiated, it was undersubstantiated because of ... etc]
+[gaurin just wants to go back to how things were. swinging swords with melion. but melion sold out for the corperate world]
+[melion retorts that he sold out too]
+[gaurin says melion was a bad influence.]
+[melion says if you hate corperate life so much why is gaurin in his way]
+[gaurin remarks that he actually loves corperate life, but melion isnt cut out for it (ominious)]
+[and gaurin is protecting him from himself, to retrun to his underling place, lest he be cast out of the whole, forever]
+[then melion relinquishes and agrees to fight]
+
+[gaurin trapped the stairs and sent renee and letheque after bisclavret even tho he was strong enough to hold off bisclavret regardless because its gaurin's job to make them happy. hes the head of HR.]
+[all the complaints about bisclavret get sent up to him]
+[he wanted to give each of them one last chance to get their resolutions before bisclavret gets the boot]
+
+[what does 'human resources' even mean?]
+[its a peoetic reference to myth]
+
+[wiggling/disjointed letters? offset position of each drawn character]
+
+Black Knight Gaurin: Comment vas tu? Bisclavret, ye fiend!
+Black Knight Gaurin: Take heed, recall an ancient story thus–
+Black Knight Gaurin: Two friends, what shared devotion to a game.
+Melion Bisclavret: Oh god, not this again.
+Black Knight Gaurin: Again? Beset the word upon the room!
+Black Knight Gaurin: A word one man has long'd to hear.
+Black Knight Gaurin: Whence he had stood alone, abandoned thus\:
+Black Knight Gaurin: to hear no ring, to see no clash, to be–
+Melion Bisclavret: To be what, exactly?
+Black Knight Gaurin: To be Gaurin, alone, errant again.
+Melion Bisclavret: Gaurin, it's been thirteen years. Give it a rest.
+Black Knight Gaurin: ...
+Melion Bisclavret: Look...
+-> I apologize.
+    Melion Bisclavret: I'm sorry I quit your stupid LARP group from college. I was busy, alright? 
+    Melion Bisclavret: I had responsibilities.
+    Black Knight Gaurin: [responsibilities to the bottle? deference to vice?]
+    Black Knight Gaurin: [ where have these responsibilities gotten you?]
+    Black Knight Gaurin: []
+-> Get over it.
+    Melion Bisclavret: Back in college I just I wasn't as into that LARP thing as you were, okay? Sue me.
+
+    Black Knight Gaurin: [thirteen years as a subordinate, selling software to imbeciles?]
+    Black Knight Gaurin: [your blade and spirit have dulled with incipience.]
+    Black Knight Gaurin: [you cannot survive this cutthroat ]
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2442,351
+__PrivCrochet_position: 2442,-129
 __PrivCrochet_tags: 
 title: GaurinFled
 ---
 Empty Text
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2696,88
+__PrivCrochet_position: 2696,-392
 __PrivCrochet_tags: 
 title: GaurinPost
 ---
 Empty Text
 ===
 __PrivCrochet_colorID: 0
-__PrivCrochet_position: 2718,352
+__PrivCrochet_position: 2718,-128
 __PrivCrochet_tags: 
 title: GaurinDefeat
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 1984,282
+__PrivCrochet_tags: 
+title: Node
+---
+Empty Text
+===
+__PrivCrochet_colorID: 0
+__PrivCrochet_position: 2664,180
+__PrivCrochet_tags: 
+title: Node_2
 ---
 Empty Text
 ===

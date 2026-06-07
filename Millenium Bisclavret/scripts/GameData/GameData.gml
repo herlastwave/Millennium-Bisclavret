@@ -147,8 +147,8 @@ global.enemies = {
         isBlocking: false,
         strength: 1,
         sprites: {idle: battle_renee},
-        activeLine: "Renée remembers. She narrows her eyes.",
-        passiveLine: "Renée is thinking about updating her licked-in status. She seems distracted... Isn't this a fight?",
+        activeLine: "Renée glares at Bisclavret, but something about her face is difficult to read.",
+        passiveLine: "Renée hesitates for a moment. It seems like she's remebering something painful.",
         actions: [/*global.actionLibrary.attack*/ global.actionLibrary.enemyActive, global.actionLibrary.enemyPassive],
         AIscript : function() {
             //attack random target (alaways bisclavret)
@@ -184,8 +184,8 @@ global.enemies = {
         isBlocking: false,
         strength: 2,
         sprites: {idle: battle_lethqeue},
-        activeLine: "Le Active line.",
-        passiveLine: "Le passive line.",
+        activeLine: "LeThéque is descibing all the startup positions she turned down for this job out of college. Yikes.",
+        passiveLine: "LeThéque is cursing out elementary school 'Learn to Code' intiatives. Touchy subject, but not really Bisclavret-related.",
         actions: [/*global.actionLibrary.attack*/ global.actionLibrary.enemyActive, global.actionLibrary.enemyPassive],
         AIscript : function() {
             //attack random target (alaways bisclavret)
