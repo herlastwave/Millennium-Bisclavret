@@ -40,5 +40,5 @@ else {
 if (end_scene=1) {
     ChatterboxStop(chatterbox);
     var target = floor_1;
-    TransitionStart(target,sqNoOut, sqFadeIn);
+    TransitionStart(target,sqFootOut, sqFadeIn);
 }

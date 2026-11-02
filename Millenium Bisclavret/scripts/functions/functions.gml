@@ -11,7 +11,7 @@ function wrap(_val, _min, _max) {
 }
 
 function chatterbox_update() {
-    node = ChatterboxGetContentMetadata(chatterbox);
+    node = ChatterboxGetContentMetadata(chatterbox,0);
     text = ChatterboxGetContent(chatterbox, 0);
 }
 
